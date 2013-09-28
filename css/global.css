@@ -26,14 +26,58 @@ body
 
 .menu_list 
 {
-	position:relative; 
-	width:100px; 
-	height:100px; 
-	background:#00FFFF;
-	z-index:100;
-	padding-top: 0px !important;
-	display:none;
+	position: relative;
+	width: 190px;
+	background: #F5F5F5;
+	z-index: 100;
 	
+	/*display:none;*/
+	
+}
+
+.sub_item{
+	height: 35px;
+	padding-top: 15px;
+	padding-left: 10px;
+	position: relative;
+	cursor: pointer;
+}
+
+.sub_item_cover
+{
+	border-bottom: 1px solid #fff;
+	background:url(../images/subitembg_0.png) repeat-y 0% 0%;
+}
+
+.sub_bg_1
+{
+		background:url(../images/subitembg_1.png) repeat-y 0% 0%;
+}
+
+.sub_bg_2
+{
+		background:url(../images/subitembg_2.png) repeat-y 0% 0%;
+}
+.sub_bg_3
+{
+		background:url(../images/subitembg_3.png) repeat-y 0% 0%;
+}
+.sub_bg_4
+{
+		background:url(../images/subitembg_4.png) repeat-y 0% 0%;
+}
+.sub_bg_5
+{
+		background:url(../images/subitembg_5.png) repeat-y 0% 0%;
+}
+.sub_bg_6
+{
+		background:url(../images/subitembg_6.png) repeat-y 0% 0%;
+}
+
+.sub_bg_7
+{
+		background:url(../images/subitembg_7.png) repeat-y 0% 0%;
 }
 .menu_item
 {

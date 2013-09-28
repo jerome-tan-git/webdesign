@@ -32,6 +32,13 @@
 					ddmenuitem.fadeOut(500);
 					// $(".menu_list").slideUp(1000);
 				});
+				$('.sub_item').hover(
+					function() {
+						$(this).animate({left:'4px'});
+					}, function() {
+						 // alert($(this).text());
+						$(this).animate({left:'0px'});
+					});
 			});
 			
 
@@ -88,11 +95,20 @@
 					<div class="menu_bar">
 						TRAVEL
 					</div>
-					<div class="menu_list" >position: absolute;<br />
-						left: 201px;
-						<br />
-						bottom: 110px;
-						<br />
+					<div class="menu_list clearfix" >
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_1">1</div>
+						</div>
+						
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_2">2</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_3">3</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_4">4</div>
+						</div>
 					</div>
 				</div>
 				<div class="grid_2 menu_item">
