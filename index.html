@@ -8,6 +8,7 @@
 		<link rel="stylesheet" type="text/css" href="css/jquery.vegas.min.css">
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>		
 		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
 		<style>
@@ -21,36 +22,42 @@
 		</style>
 
 		<script type="text/javascript">
-		
 			$(document).ready(function() {
 				$(".menu_item").hover(function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
 					ddmenuitem.fadeIn(500);
+					//$(this).css('background','#fff');
 					//$(".menu_list").slideDown(800);
 				}, function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
 					ddmenuitem.fadeOut(500);
+					
 					// $(".menu_list").slideUp(1000);
 				});
-				$('.sub_item').hover(
-					function() {
-						$(this).animate({left:'4px'});
-					}, function() {
-						 // alert($(this).text());
-						$(this).animate({left:'0px'});
+				$('.sub_item').hover(function() {
+					$(this).parent().animate({ backgroundColor: "#ffffff" }, 'low');
+					// $(this).parent().css('background','#F');  
+					$(this).animate({
+						left : '4px'
 					});
+				}, function() {
+					$(this).parent().animate({ backgroundColor: "#F5F5F5" }, 'low');
+					// $(this).parent().css('background','#F5F5F5');
+					$(this).animate({
+						left : '0px'
+					});
+				});
 			});
-			
 
 			$(function() {
 				$.vegas({
-				src:'./images/login-bg_88.png',
+				src:'./images/login-bg_506.jpg',  
 				fade:1000,
 				complete:function() {
 				var img = $(this).attr('src');
 				}
 				})('overlay', {
-					src : './overlays/02.png'
+					src : './overlays/03.png'
 				});
 			});
 
@@ -66,10 +73,12 @@
 	</head>
 
 	<body>
-		<div style="height:150px" >&nbsp;</div>
+		<div style="height:150px" >
+			&nbsp;
+		</div>
 		<div class="container_12">
 			<div class="grid_12">
-				<img src="./images/logo.png" style="padding-left: 630px;"/>
+				<!-- <img src="./images/logo.png" style="padding-left: 630px;"/> -->
 			</div>
 		</div>
 
@@ -84,11 +93,28 @@
 					<div class="menu_bar">
 						TRAVEL
 					</div>
-					<div class="menu_list" >position: absolute;<br />
-						left: 20px;
-						<br />
-						bottom: 10px;
-						<br />
+					<div class="menu_list clearfix" >
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_1">
+								1
+							</div>
+						</div>
+
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_2">
+								2
+							</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_3">
+								3
+							</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_4">
+								4
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="grid_2 menu_item">
@@ -97,17 +123,45 @@
 					</div>
 					<div class="menu_list clearfix" >
 						<div class="sub_item_cover">
-							<div class="sub_item sub_bg_1">1</div>
+							<div class="sub_item sub_bg_3">
+								<div class="div_icon">
+									<img src="./images/sample_icon.png" />
+								</div>
+								<div class="menu_txt">
+									音乐播放器
+								</div>
+							</div>
 						</div>
-						
+
 						<div class="sub_item_cover">
-							<div class="sub_item sub_bg_2">2</div>
+							<div class="sub_item sub_bg_2">
+								<div class="div_icon">
+									<img src="./images/sample_icon_2.png" />
+								</div>
+								<div class="menu_txt">
+									音乐播放器
+								</div>
+							</div>
 						</div>
 						<div class="sub_item_cover">
-							<div class="sub_item sub_bg_3">3</div>
+							<div class="sub_item sub_bg_1">
+								<div class="div_icon">
+									<img src="./images/sample_icon_3.png" />
+								</div>
+								<div class="menu_txt">
+									音乐播放器
+								</div>
+							</div>
 						</div>
 						<div class="sub_item_cover">
-							<div class="sub_item sub_bg_4">4</div>
+							<div class="sub_item sub_bg_4">
+								<div class="div_icon">
+									<img src="./images/sample_icon_4.png" />
+								</div>
+								<div class="menu_txt">
+									音乐播放器
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -273,7 +327,38 @@
 					<div class="foot_panel black_bg"></div>
 				</div>
 				<div class="bt-shadow"></div>
+				
+				
+				
+				
+				
 				<!--  block start -->
+				
+				
+				
+				
+				
+				<div class=" white_panel clearfix small_bg">
+					
+					<div class="left_tab">
+						<div class="left_tab_item left_tab_item_selected">
+							<img class="lefft_image_icon" src="./images/test_left_icoon.png" />
+						</div>
+						<div class="left_tab_item">
+							<img class="lefft_image_icon" src="./images/test_left_icon_1.png" />
+						</div>
+						<div class="left_tab_item">
+							<img class="lefft_image_icon" src="./images/test_left_icon_2.png" />
+						</div>
+					</div>
+					<div class="right_tab">
+						表格 | 显示
+					</div>
+					
+				</div>
+				<div class="bt-shadow"></div>
+				<!-- block over -->
+				
 				<div class=" white_panel">
 					<div class="title small  blue_header">
 						<div class="cell cell_1">
@@ -336,46 +421,6 @@
 				<div class="bt-shadow"></div>
 				<!-- block over -->
 
-				<div class=" white_panel">
-					<div class="title small head_panel">
-						<div class="cell cell_3 border-b select_cell border-r">
-							首页
-						</div>
-						<div class="cell cell_3 border-b border-rborder-r">
-							首页
-						</div>
-						<div class="cell cell_3 border-b">
-							首页
-						</div>
-					</div>
-					<div class="clearfix">
-						<div class="content_cell">
-							作为块级元素的表格table显示，
-						</div>
-						<div class="content_cell">
-							作为块级元素的表格table显示，
-						</div>
-						<div class="content_cell">
-							作为块级元素的表格table显示，
-						</div>
-						<div class="content_cell">
-							作为块级元素的表格table显示，
-						</div>
-						<div class="content_cell">
-							作为块级元素的表格table显示，
-						</div>
-					</div>
-					<div class="foot_panel title small">
-						<div class="cell cell_3 foot_cell">
-							表格
-						</div>
-						<div class="cell cell_3 pull_right foot_cell">
-							显示
-						</div>
-					</div>
-				</div>
-				<div class="bt-shadow"></div>
-				<!-- block over -->
 
 				<!-- block over -->
 
