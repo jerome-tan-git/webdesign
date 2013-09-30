@@ -34,6 +34,7 @@
 					
 					// $(".menu_list").slideUp(1000);
 				});
+				
 				$('.sub_item').hover(function() {
 					$(this).parent().animate({ backgroundColor: "#ffffff" }, 'low');
 					// $(this).parent().css('background','#F');  
@@ -47,6 +48,31 @@
 						left : '0px'
 					});
 				});
+				
+				$('.left_tab_item').hover(function() {
+					//$(this).parent().animate({ backgroundColor: "#ffffff" }, 'low');
+					// $(this).parent().css('background','#F');  
+					// $(this).animate({
+						// left : '4px'
+					// });
+					$(this).find(".left_slide").css('display', 'block');
+					$(this).find(".left_slide").animate({ opacity: 0 }, 0);
+					$(this).find(".left_slide").animate({ opacity: 1, left: "50px" }, 'slow');
+					// $(this).find(".left_slide").animate({left:'250px'});
+					 
+				}, function() {
+					
+					// $(this).find(".left_slide").animate({ opacity: 0 }, 0);
+					$(this).find(".left_slide").animate({ opacity: 0, left: "0px" }, 'slow');
+					//$(this).find(".left_slide").css('display', 'none');
+					// $(this).find(".left_slide").fadeOut();
+					// $(this).parent().animate({ backgroundColor: "#F5F5F5" }, 'low');
+					// // $(this).parent().css('background','#F5F5F5');
+					// $(this).animate({
+						// left : '0px'
+					// });
+				});
+				 
 			});
 
 			$(function() {
@@ -343,16 +369,31 @@
 					<div class="left_tab">
 						<div class="left_tab_item left_tab_item_selected">
 							<img class="lefft_image_icon" src="./images/test_left_icoon.png" />
+							<div class="left_slide">
+								a
+							</div>
 						</div>
 						<div class="left_tab_item">
 							<img class="lefft_image_icon" src="./images/test_left_icon_1.png" />
+							<div class="left_slide">
+								a
+							</div>
 						</div>
 						<div class="left_tab_item">
 							<img class="lefft_image_icon" src="./images/test_left_icon_2.png" />
+							<div class="left_slide">
+								a
+							</div>
 						</div>
 					</div>
-					<div class="right_tab">
-						表格 | 显示
+					<div class="text_shadow_content shadow_title" >
+						<div  class="shadow_title_line">
+							表格显示
+						</div>
+						
+					</div>
+					<div class="text_shadow_content shadow_small">
+						作为块级元素的表格table 显示作为块级元素的表格tabl e显示作为块级元素的表格table 显示作为块级元素的表 格table显示作为块级元素的表格table显示
 					</div>
 					
 				</div>

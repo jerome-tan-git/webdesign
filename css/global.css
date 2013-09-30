@@ -304,10 +304,10 @@ body
 .left_tab_item
 {
 	height:66px;
-	background-color:#ffffff;
-	filter:alpha(Opacity=70);
+	background:url(../images/icon_bg.png) repeat-x 0% 100%;
+	/*filter:alpha(Opacity=70);
 	-moz-opacity:0.7;
-	opacity: 0.7;
+	opacity: 0.7;*/
 }
 
 
@@ -315,21 +315,43 @@ body
 {
 
 	float:left;
-	/*background-color:#272A55;*/
 	height: 100px;
+	
+	
+	
+}
+
+.text_shadow_content
+{
+	
 	color:#ffffff;
-	padding-left: 10px;
+	padding-left: 80px;
 	padding-top: 10px;
-	font-size:24pt;
+	padding-right:10px;
 	filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='#333333', Positive='true');
 	text-shadow: #333333 2px 2px 2px;
+}
+.shadow_title
+{
+	padding-left: 110px;
+	padding-top: 24px;
+	font-size:22pt;
+}
+
+.shadow_title_line
+{
+	
+	border-bottom:1px solid #ffffff;
+}
+.shadow_small
+{
+	padding-left: 110px;
+	font-size:12pt;
 }
 .left_tab_item_selected
 {
 	position:relative;
-	filter:alpha(Opacity=100);
-	-moz-opacity:1;
-	opacity: 1;
+	background-color:#FFFFFF;
 }
 .small_bg
 {
@@ -339,6 +361,16 @@ body
 	opacity: 1.0;
 }
 
+.left_slide
+{
+	position:relative;
+	width:100px;
+	height:66px;
+	background-color:#cc0000;
+	top: -54px;
+	left: 70px;
+	display: none;
+}
 
 .cover{
 	background-color:#cccccc;
