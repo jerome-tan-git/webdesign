@@ -366,12 +366,16 @@ body
 	position:relative;
 	width:100px;
 	height:66px;
-	background-color:#cc0000;
+	background-color:#ffffff;
 	top: -54px;
-	left: 70px;
+	left: 75px;
 	display: none;
 }
-
+.left_slide_txt
+{
+	padding-top: 23px;
+	padding-left: 6px;	
+}
 .cover{
 	background-color:#cccccc;
 	filter:alpha(Opacity=60);
