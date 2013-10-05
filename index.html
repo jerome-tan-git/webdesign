@@ -25,14 +25,14 @@
 			$(document).ready(function() {
 				$(".menu_item").hover(function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
+					$(this).addClass("menu_mouse_over");
 					ddmenuitem.fadeIn(500);
-					//$(this).css('background','#fff');
-					//$(".menu_list").slideDown(800);
+
 				}, function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
+					$(this).removeClass("menu_mouse_over");
 					ddmenuitem.fadeOut(500);
-					
-					// $(".menu_list").slideUp(1000);
+
 				});
 				
 				$('.sub_item').hover(function() {
@@ -43,25 +43,18 @@
 					});
 				}, function() {
 					$(this).parent().animate({ backgroundColor: "#F5F5F5" }, 'low');
-					// $(this).parent().css('background','#F5F5F5');
 					$(this).animate({
 						left : '0px'
 					});
 				});
 				
 				$('.left_tab_item').hover(function() {
-					//$(this).parent().animate({ backgroundColor: "#ffffff" }, 'low');
-					// $(this).parent().css('background','#F');  
-					// $(this).animate({
-						// left : '4px'
-					// });
+
 					$(this).find(".left_slide").css('display', 'block');
 					$(this).find(".left_slide").animate({ opacity: 0 }, 0);
 					$(this).find(".left_slide").animate({ opacity: 0.8, left: "70px" }, 'slow');
 					$(this).addClass("left_tab_item_selected");
-					
-					// $(this).find(".left_slide").animate({left:'250px'});
-					 
+
 				}, function() {
 					// $(this).find(".left_slide").animate({ opacity: 0 }, 0);
 					$(this).find(".left_slide").animate({ opacity: 0, left: "75px" }, 'slow');
@@ -69,14 +62,6 @@
 					{
 						$(this).removeClass("left_tab_item_selected");
 					}
-					
-					//$(this).find(".left_slide").css('display', 'none');
-					// $(this).find(".left_slide").fadeOut();
-					// $(this).parent().animate({ backgroundColor: "#F5F5F5" }, 'low');
-					// // $(this).parent().css('background','#F5F5F5');
-					// $(this).animate({
-						// left : '0px'
-					// });
 				});
 				 
 			});
@@ -89,7 +74,7 @@
 				var img = $(this).attr('src');
 				}
 				})('overlay', {
-					src : './overlays/03.png'
+					src : './overlays/01.png'
 				});
 			});
 
@@ -106,7 +91,11 @@
 
 	<body>
 		<div style="height:150px" >
-			&nbsp;
+			<div class="container_12">
+				<div class="grid_12 shadow_home">
+					首页&nbsp;&nbsp;&nbsp;&nbsp;登录
+				</div>
+			</div>
 		</div>
 		<div class="container_12">
 			<div class="grid_12">
@@ -116,14 +105,25 @@
 
 		<div class="container_12">
 			<div class="grid_12 menu_bg">
-				<div class="grid_2 menu_item menu_mouse_over">
+				<div class="grid_2 menu_item ">
 					<div class="menu_bar">
-						首页
+						<div>
+							<img src="./images/gkbs_ico.png" />
+						</div>
+						<div class="menu_text">
+							<img src="./images/gkbs.png" />
+						</div>
+						
 					</div>
 				</div>
-				<div class="grid_2 menu_item" >
+				<div class="grid_2 menu_item " >
 					<div class="menu_bar">
-						TRAVEL
+						<div>
+							<img src="./images/yqdt_ico.png" />
+						</div>
+						<div class="menu_text">
+							<img src="./images/yqdt.png" />
+						</div>
 					</div>
 					<div class="menu_list clearfix" >
 						<div class="sub_item_cover">
@@ -150,8 +150,13 @@
 					</div>
 				</div>
 				<div class="grid_2 menu_item">
-					<div class="menu_bar">
-						TRAVEL
+					<div class="menu_bar ">
+						<div>
+							<img src="./images/zcfg_ico.png" />
+						</div>
+						<div class="menu_text">
+							<img src="./images/zcfg.png" />
+						</div>
 					</div>
 					<div class="menu_list clearfix" >
 						<div class="sub_item_cover">
@@ -197,14 +202,24 @@
 						</div>
 					</div>
 				</div>
-				<div class="grid_2 menu_item">
+				<div class="grid_2 menu_item ">
 					<div class="menu_bar">
-						TRAVEL
+						<div>
+							<img src="./images/zxfw_ico.png" />
+						</div>
+						<div class="menu_text">
+							<img src="./images/zxfw.png" />
+						</div>
 					</div>
 				</div>
-				<div class="grid_2 menu_item">
+				<div class="grid_2 menu_item ">
 					<div class="menu_bar">
-						TRAVEL
+						<div>
+							<img src="./images/pxxx_ico.png" />
+						</div>
+						<div class="menu_text">
+							<img src="./images/pxxx.png" />
+						</div>
 					</div>
 				</div>
 			</div><!-- div class="grid_12 menu_bg" -->
@@ -401,16 +416,17 @@
 							</div>
 						</div>
 					</div>
-					<div class="text_shadow_content shadow_title" >
-						<div  class="shadow_title_line">
-							表格显示
+					<div class="content_right clearfix">
+						<div class="text_shadow_content shadow_title" >
+							<div  class="shadow_title_line">
+								<div> 表格显示 </div>
+							</div>
+							
 						</div>
-						
+						<div class="text_shadow_content shadow_small">
+							作为块级元素的表格table 显示作为块级元素的表格tabl e显示作为块级元素的表格table 显示作为块级元素的表 格table显示作为块级元素的表格table显示
+						</div>
 					</div>
-					<div class="text_shadow_content shadow_small">
-						作为块级元素的表格table 显示作为块级元素的表格tabl e显示作为块级元素的表格table 显示作为块级元素的表 格table显示作为块级元素的表格table显示
-					</div>
-					
 				</div>
 				<div class="bt-shadow"></div>
 				<!-- block over -->
