@@ -127,11 +127,18 @@ body
 }
 .list_header
 {
+	margin-top:10px;
 	padding-left:30px;
 	font-size:14pt;
 	float:left;
 }
-
+.footer_bg{
+	background-color:#333;	
+	filter:alpha(Opacity=30);
+	-moz-opacity:0.3;
+	opacity: 0.3;
+	height:50px;
+}
 .more
 {
 	float:right;
@@ -147,6 +154,7 @@ body
 .new_date
 {
 	padding-right:10px;
+	padding-left: 10px;
 }
 .tiny
 {
@@ -176,8 +184,8 @@ body
 .cell
 {
 	float:left;
-	padding-top:14px;
-	padding-bottom:14px;
+	/*padding-top:14px;
+	padding-bottom:14px;*/
 }
 .head_panel
 {
@@ -190,7 +198,7 @@ body
 }
 .foot_panel 
 {
-	border-top:#ccc solid 1px; 
+	/*border-top:#ccc solid 1px; */
 	height:40px
 }
 
@@ -232,9 +240,15 @@ body
 	padding-top:10px;
 	padding-left:20px;
 	padding-bottom:10px;
-	border-bottom:1px solid #eee;
-	background:url(../images/arrow-right.png) no-repeat 98% 50%; 
+	/*border-bottom:1px solid #eee;*/
+	/*background:url(../images/arrow-right.png) no-repeat 98% 50%; */
 	
+}
+
+.head_arrow
+{
+	background: url(../images/arrow-right.png) no-repeat 99% 5px;
+	height: 40px;
 }
 .content_item
 {
@@ -251,10 +265,13 @@ body
 }
 .big_title
 {
-	font-size:14pt;
-	padding-left:10px;
-	padding-bottom:1px;
-	color:#333;   
+	font-size: 14pt;
+	padding-left: 0px;
+	margin-left: 11px;
+	margin-right: -31px;
+	padding-bottom: 1px;
+	color: #333;  
+	border-bottom: 2px solid #FFB800;
 }
 .foot_cell
 {
@@ -495,8 +512,8 @@ body
 	padding-left:20px;
 	padding-right:20px;
 	padding-bottom:20px; 
-	border-bottom:1px solid #eee;
-	border-top:1px solid #eee;
+	/*border-bottom:1px solid #eee;*/
+	/*border-top:1px solid #eee;*/
 } 
 .title_image
 {
