@@ -122,10 +122,23 @@ body
 .title
 {
 	font-family: "微软雅黑",Arial,"宋体";
-	text-align: center;
-	color:#ADADAD;   
+	/*text-align: center;*/
+	color:#ADADAD;
+}
+.list_header
+{
+	padding-left:30px;
+	font-size:14pt;
+	float:left;
 }
 
+.more
+{
+	float:right;
+	padding-right: 20px;
+	font-size:9pt;
+	margin-top: 10px;
+}
 .small
 {
 	font-size:12pt;
@@ -151,7 +164,10 @@ body
 .border-b{
 	border-bottom:#ccc solid 1px;
 }
-
+.center_text
+{
+	text-align: center;
+}
 .menu_text
 {
 	padding-top: 10px;
@@ -165,7 +181,7 @@ body
 }
 .head_panel
 {
-	height:50px
+	/*height:50px*/
 }
 
 .head_image_panel
@@ -218,13 +234,19 @@ body
 	padding-bottom:10px;
 	border-bottom:1px solid #eee;
 	background:url(../images/arrow-right.png) no-repeat 98% 50%; 
+	
+}
+.content_item
+{
+	position: relative;
+	cursor: pointer;
 }
 .first_news_content
 {
 	padding-left:10px;
 	padding-top:14px;
 	color:#888;   
-	width:270px;
+	width:360px;
 	height:120px; 
 }
 .big_title
@@ -286,9 +308,9 @@ body
 .white_panel
 {
 	background-color:#fff;	
-	filter:alpha(Opacity=90);
+	/*filter:alpha(Opacity=90);
 	-moz-opacity:0.9;
-	opacity: 0.9;
+	opacity: 0.9;*/
 }
 
 .single_new
@@ -410,6 +432,22 @@ body
 	float:left;
 	background-color:#80af92;
 }
+
+.search_div
+{
+	float: left;
+}
+
+.search_input
+{
+	border: 0px solid #ffffff;
+	font-size: 18pt;
+	margin-left:10px;
+	margin-top:10px;
+	width: 230px;
+	border-bottom: 1px solid #eee;
+	color: #999999;
+}
 .single_new .label_1
 {
 	width:50px;
@@ -458,6 +496,7 @@ body
 	padding-right:20px;
 	padding-bottom:20px; 
 	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
 } 
 .title_image
 {
