@@ -11,16 +11,8 @@
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-		<style>
-			#jsddm li {
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				visibility: hidden;
-				border-top: 1px solid white
-			}
-		</style>
-
+		<script type="text/javascript" src="js/jquery.slides.js"></script>
+		
 		<script type="text/javascript">
 			$(document).ready(function() {
 				//menu_bar
@@ -239,6 +231,15 @@
 				&nbsp;
 			</div>
 			<div class="grid_8">
+				<div class="clearfix slider_out">
+				<div id="slides">
+			      <img src="./images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+			      <img src="./images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+			      <img src="./images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+			      <img src="./images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+			    </div>
+				</div>
+				
 				<div class=" white_panel">
 					<div class="title small head_panel clearfix">
 						<div class="cell cell_1 sub_bg_3">
@@ -439,7 +440,22 @@
 			</div>
 
 		</div><!--  div class="container_12"-->
-
+	<script>
+		 $(function() {
+	      $('#slides').slidesjs({
+	        width: 540,
+	        height: 300,
+	        navigation: true,
+	        play: {
+	          active: true,
+	          auto: true,
+	          interval: 4000,
+	          pauseOnHover: true,
+          	  restartDelay: 2500
+	         }
+	      });
+	    });
+	</script>
 	</body>
 </html>
 
