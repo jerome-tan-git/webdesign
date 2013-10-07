@@ -247,7 +247,7 @@ body
 
 .head_arrow
 {
-	background: url(../images/arrow-right.png) no-repeat 99% 5px;
+	background: url(../images/arrow-right.png) no-repeat 99% 8px;
 	height: 40px;
 }
 .content_item
@@ -325,11 +325,42 @@ body
 .white_panel
 {
 	background-color:#fff;	
+	
 	/*filter:alpha(Opacity=90);
 	-moz-opacity:0.9;
 	opacity: 0.9;*/
 }
+.download_title{
+	font-size: 10pt;
+	margin-left: 8px;
+}
+.download_block
+{
+	float: left;
+	width: 92px;
+	height: 110px;
+	margin: 3px 3px 3px 3px;
+	/*border: 1px solid #CCCCCC;*/
+}
+.image_container{
+	margin-left: 13px;
+	margin-top: 10px;
+}
+.big_bg_1
+{
+	background:url('../images/login-bg_5.png') repeat 33% 58%;;
+}
 
+.big_bg_2
+{
+	/*background:url('../images/login-bg_3.png') repeat 33% 58%;;*/
+	background-color:#fff;	
+}
+
+.search_panel
+{
+	height: 150px;
+}
 .single_new
 {
 	height:50px;
@@ -339,7 +370,7 @@ body
 {
 	width:70px;
 	float:left;
-	background:url(../images/line-1px-d9d9d9.png) repeat-y 100% 0%;
+	background:url('../images/line-1px-d9d9d9.png') repeat-y 100% 0%;
 	
 	
 }
@@ -454,16 +485,20 @@ body
 {
 	float: left;
 }
-
+.search_go
+{
+	padding-top: 26px;
+	padding-left: 59px;
+}
 .search_input
 {
 	border: 0px solid #ffffff;
+	background-color: transparent;
 	font-size: 18pt;
-	margin-left:10px;
 	margin-top:10px;
-	width: 230px;
-	border-bottom: 1px solid #eee;
-	color: #999999;
+	width: 250px;
+	border-bottom: 2px solid #fff;
+	color: #ccc;
 }
 .single_new .label_1
 {
@@ -552,10 +587,22 @@ body
 .slider_out
 {
 	padding: 5px 5px 5px 5px;
-	background-color: #ffffff;
-	margin-bottom: 10px;
+	/*background-color: #ffffff;*/
 }
 
+.search_bg
+{
+	background: url("./images/login-bg_88.png");
+}
+
+.search_img{
+	padding-top:10px;
+	padding-left:10px;
+}
+.slider_bg
+{
+	background-color: #ffffff;
+}
 /*slider*/
 	#slides {
       display: none
@@ -563,7 +610,7 @@ body
 
     #slides .slidesjs-navigation {
       margin-top:5px;
-      display: none;
+      /*display: none;*/
     }
 
     a.slidesjs-next,
@@ -573,22 +620,22 @@ body
       background-image: url('./images/btns-next-prev.png');
       background-repeat: no-repeat;
       display:block;
-      width:12px;
-      height:18px;
+	  width: 9px;
+	  height: 15px;
       overflow: hidden;
       text-indent: -9999px;
       float: left;
       margin-right:5px;
-      display:none !important;
+      /*display:none !important;*/
     }
 
     a.slidesjs-next {
       margin-right:10px;
-      background-position: -12px 0;
+      background-position: -11px 0;
     }
 
     a:hover.slidesjs-next {
-      background-position: -12px -18px;
+      background-position: -11px -15px;
     }
 
     a.slidesjs-previous {
@@ -596,32 +643,32 @@ body
     }
 
     a:hover.slidesjs-previous {
-      background-position: 0 -18px;
+      background-position: 0 -15px;
     }
 
     a.slidesjs-play {
       width:15px;
-      background-position: -25px 0;
+      background-position: -20px 0;
     }
 
     a:hover.slidesjs-play {
-      background-position: -25px -18px;
+      background-position: -20px -15px;
     }
 
     a.slidesjs-stop {
       width:18px;
-      background-position: -41px 0;
+      background-position: -34px 0px;
     }
 
     a:hover.slidesjs-stop {
-      background-position: -41px -18px;
+      background-position: -34px -15px;
     }
 
     .slidesjs-pagination {
       margin: 7px 0 0;
       float: right;
       list-style: none;
-      display: none;
+      /*display: none;*/
     }
 
     .slidesjs-pagination li {
@@ -646,7 +693,7 @@ body
     }
 
     .slidesjs-pagination li a:hover {
-      background-position: 0 -26px
+      background-position: 0 -36px
     }
 
     #slides a:link,

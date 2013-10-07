@@ -11,7 +11,7 @@
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
-		<script type="text/javascript" src="js/jquery.slides.js"></script>
+		<script type="text/javascript" src="js/jquery.slides.min.js"></script>
 		
 		<script type="text/javascript">
 			$(document).ready(function() {
@@ -84,7 +84,7 @@
 						color :'#666666'
 					});
 					$(this).parent().animate({
-						backgroundColor : "#ffffff"
+						backgroundColor : "transparent"
 					}, 'low');
 				});
 				
@@ -231,16 +231,30 @@
 				&nbsp;
 			</div>
 			<div class="grid_8">
-				<div class="clearfix slider_out">
-				<div id="slides">
-			      <img src="./images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
-			      <img src="./images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
-			      <img src="./images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
-			      <img src="./images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
-			    </div>
+				<div class="clearfix slider_bg big_bg_2">
+					<div class="title small head_panel clearfix">
+						<div class="cell cell_1 sub_bg_4">
+							<div class="clearfix head_arrow">
+								<div class="list_header">
+									图片新闻
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="slider_out">
+						<div id="slides">
+					      <img src="./images/example-slide-1.jpg" alt="Photo by: Missy S Link: http://www.flickr.com/photos/listenmissy/5087404401/">
+					      <img src="./images/example-slide-2.jpg" alt="Photo by: Daniel Parks Link: http://www.flickr.com/photos/parksdh/5227623068/">
+					      <img src="./images/example-slide-3.jpg" alt="Photo by: Mike Ranweiler Link: http://www.flickr.com/photos/27874907@N04/4833059991/">
+					      <img src="./images/example-slide-4.jpg" alt="Photo by: Stuart SeegerLink: http://www.flickr.com/photos/stuseeger/97577796/">
+					      <a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left icon-large"></i></a>
+					      <a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
+					    </div>
+					</div>
 				</div>
+				<div class="bt-shadow"></div>
 				
-				<div class=" white_panel">
+				<div class=" white_panel big_bg_1">
 					<div class="title small head_panel clearfix">
 						<div class="cell cell_1 sub_bg_3">
 							<div class="clearfix head_arrow">
@@ -249,7 +263,6 @@
 								</div>
 							</div>
 						</div>
-	
 					</div>
 					<div class="clearfix">
 						<div class="clearfix first_news">
@@ -315,33 +328,26 @@
 				<div class="clearfix">
 					<div class="sample_left_panel">
 						<div>
-							<div class="white_panel single_new">
-								<div class="label">
-									<div>
-										<img src="./images/search.png" />
-									</div>
+							<div class="search_panel search_bg">
+								<img class="search_img" src="./images/search_t.png" />
+								<div>
+									<form>
+										<div style="float:left;width:200px">
+											<input class="search_input" type="text"/>
+										</div>
+										<div style="float:left">
+											<img class="search_go" src="./images/search_go.png" />
+										</div>
+									</form>
 								</div>
-								<div class="search_div">
-									<input type="text" class="search_input" />
-								</div>
+							</div>
+							<div class="bt-shadow"></div>
+						</div>
 
-							</div>
-							<div class="bt-shadow"></div>
-						</div>
-						<div>
-							<div class="white_panel single_new">
-								<div class="label_1">
-									<div>
-										02
-									</div>
-								</div>
-							</div>
-							<div class="bt-shadow"></div>
-						</div>
 					</div>
 
 				</div>
-			<div class=" white_panel">
+				<div class=" white_panel">
 					<div class="title small head_panel clearfix">
 						<div class="cell cell_1 sub_bg_2">
 							<div class="clearfix head_arrow">
@@ -386,6 +392,90 @@
 					</div>
 				</div>
 				<div class="bt-shadow"></div>
+				
+				
+				<div class=" white_panel">
+					<div class="title small head_panel clearfix">
+						<div class="cell cell_1 sub_bg_1">
+							<div class="clearfix head_arrow">
+							<div class="list_header">
+								资料下载
+							</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="clearfix">
+						<div class="download_block clearfix">
+							<div class="image_container">
+								<img src="./images/word_icon.png"/>
+							
+							</div>
+								<div class="download_title">
+									资料下载资料
+								</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/pdf_ico.png"/>
+							</div>
+							<div class="download_title">
+									资料下载资料
+								</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/outlook_ico.png"/>
+							</div>
+							<div class="download_title">
+									资料下载资料
+								</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/excel_ico.png"/>
+							</div>
+							<div class="download_title">
+									资料下载资料
+								</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/pp_ico.png"/>
+							</div>
+							<div class="download_title">
+									资料下载资料
+								</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/word_icon.png"/>
+							</div>
+							<div class="download_title">
+									资料下载资料
+							</div>
+						</div>
+						
+					</div>
+					<div class="foot_panel">
+						<div class="more">
+							更多...
+						</div>
+					</div>
+				</div>
+				<div class="bt-shadow"></div>
+				
+				
+				<div>
+					<div class="white_panel single_new">
+						<div class="label_1">
+							<div>
+								02
+							</div>
+						</div>
+					</div>
+					<div class="bt-shadow"></div>
+				</div>
 				<!--  block start -->
 
 				
