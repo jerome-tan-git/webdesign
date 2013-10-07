@@ -332,7 +332,8 @@ body
 }
 .download_title{
 	font-size: 10pt;
-	margin-left: 8px;
+	text-align: center;
+	
 }
 .download_block
 {
@@ -364,6 +365,7 @@ body
 .single_new
 {
 	height:50px;
+	cursor: pointer;
 }
 
 .left_tab
@@ -498,14 +500,15 @@ body
 	margin-top:10px;
 	width: 250px;
 	border-bottom: 2px solid #fff;
-	color: #ccc;
+	color: #ffffff;
 }
 .single_new .label_1
 {
 	width:50px;
 	height:50px;
 	float:left;
-	background-color:#907ea6;
+	
+	/*background-color:#907ea6;*/
 }
 .single_new .label div
 {
@@ -589,10 +592,37 @@ body
 	padding: 5px 5px 5px 5px;
 	/*background-color: #ffffff;*/
 }
-
+.single_label{
+	float:left;
+	width:250px;
+}
+.small_bg_1
+{
+	background-color: #8d8eba;
+}
+.small_bg_2
+{
+	background-color: #149265;
+}
+.small_bg_3
+{
+	background-color: #81B3E2;
+}
+.small_bg_4
+{
+	background-color: #FFB25F;
+}
+.label_text
+{
+	margin-top: 23px;
+	font-size: 15pt;
+	float: right;
+	margin-right: 8px;
+	color: #ffffff;
+}
 .search_bg
 {
-	background: url("./images/login-bg_88.png");
+	background: url("../images/login-bg_89.jpg") repeat 0% 47%;
 }
 
 .search_img{
