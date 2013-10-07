@@ -483,6 +483,29 @@ body
 	background-color:#80af92;
 }
 
+.service_block{
+	float:left;
+	width: 145px;
+	cursor: pointer;
+}
+.service_content
+{
+	height: 148px;
+}
+.margin-b
+{
+	margin-bottom: 10px;
+}
+.margin_l
+{
+	margin-left: 5px;
+}
+
+.margin_r
+{
+	margin-right: 5px;
+}
+
 .search_div
 {
 	float: left;
@@ -502,6 +525,10 @@ body
 	width: 250px;
 	border-bottom: 2px solid #fff;
 	color: #ffffff;
+}
+.service_img{
+	padding-left: 10px;
+	padding-top: 10px;
 }
 .single_new .label_1
 {
@@ -615,10 +642,10 @@ body
 }
 .label_text
 {
-	margin-top: 23px;
-	font-size: 15pt;
+	margin-top: 75px;
+	font-size: 13pt;
 	float: right;
-	margin-right: 8px;
+	margin-right: 5px;
 	color: #ffffff;
 }
 .search_bg
