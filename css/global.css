@@ -490,7 +490,8 @@ body
 .search_go
 {
 	padding-top: 26px;
-	padding-left: 59px;
+	padding-left: 9px;
+	cursor: pointer;
 }
 .search_input
 {
