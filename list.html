@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>中文</title>
+		<link rel="stylesheet" type="text/css" href="css/960.css" />
+		<link rel="stylesheet" type="text/css" href="css/global.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.vegas.min.css">
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slides.min.js"></script>
+		<script type="text/javascript" src="js/jquery.barousel.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				//menu_bar
+				$(".menu_item").hover(function() {
+					ddmenuitem = $(this).find('.menu_list').eq(0);
+					$(this).addClass("menu_mouse_over");
+					ddmenuitem.fadeIn(500);
+
+				}, function() {
+					ddmenuitem = $(this).find('.menu_list').eq(0);
+					$(this).removeClass("menu_mouse_over");
+					ddmenuitem.fadeOut(500);
+
+				});
+				//menu_
+				$('.sub_item').hover(function() {
+					$(this).parent().animate({
+						backgroundColor : "#ffffff"
+					}, 'low');
+					// $(this).parent().css('background','#F');
+					$(this).animate({
+						left : '4px'
+					});
+				}, function() {
+					$(this).parent().animate({
+						backgroundColor : "#F5F5F5"
+					}, 'low');
+					$(this).animate({
+						left : '0px'
+					});
+				});
+
+				$('.left_tab_item').hover(function() {
+
+					$(this).find(".left_slide").css('display', 'block');
+					$(this).find(".left_slide").animate({
+						opacity : 0
+					}, 0);
+					$(this).find(".left_slide").animate({
+						opacity : 0.8,
+						left : "70px"
+					}, 'slow');
+					$(this).addClass("left_tab_item_selected");
+
+				}, function() {
+					// $(this).find(".left_slide").animate({ opacity: 0 }, 0);
+					$(this).find(".left_slide").animate({
+						opacity : 0,
+						left : "75px"
+					}, 'slow');
+					if ($(this).attr("select") != "true") {
+						$(this).removeClass("left_tab_item_selected");
+					}
+				});
+
+				//content_list
+				$('.content_item').hover(function() {
+					$(this).animate({
+						left : '4px',
+						color : '#000000'
+					});
+					$(this).parent().animate({
+						backgroundColor : "#fefeed"
+					}, 'low');
+				}, function() {
+					$(this).animate({
+						left : '0px',
+						color : '#666666'
+					});
+					$(this).parent().animate({
+						backgroundColor : "transparent"
+					}, 'low');
+				});
+
+			});
+
+			$(function() {
+				$.vegas({
+				src:'./images/login-bg_501.jpg',
+				fade:1000,
+				complete:function() {
+				var img = $(this).attr('src');
+				}
+				})('overlay', {
+					src : './overlays/01.png'
+				});
+			});
+
+			jQuery(document).ready(function() {
+				jQuery('.nailthumb-container').nailthumb({
+					width : 190,
+					height : 190
+				});
+			});
+
+		</script>
+
+	</head>
+
+	<body>
+		<div style="height:110px" >
+			<div class="container_12">
+				<div class="grid_12 shadow_home">
+					首页&nbsp;&nbsp;&nbsp;&nbsp;登录
+				</div>
+			</div>
+		</div>
+		<div class="container_12">
+			<div class="grid_12">
+				<!-- <img src="./images/logo.png" style="padding-left: 535px;"/> -->
+			</div>
+		</div>
+
+		<div class="container_12">
+			<div class="grid_12 menu_bg">
+				<div class="grid_2 menu_item ">
+					<div class="menu_bar">
+						<div>
+							<img src="./images/gkbs_ico.png" />
+						</div>
+						<div class="menu_text">
+							<!-- <img src="./images/gkbs.png" /> -->
+						</div>
+					</div>
+					<div class="menu_list clearfix" >
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_3">
+								<div class="div_icon">
+									<img src="./images/sample_icon.png" />
+								</div>
+								<div class="menu_txt">
+									<!-- 标准备案 -->
+									test1
+								</div>
+							</div>
+						</div>
+
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_2">
+								<div class="div_icon">
+									<img src="./images/sample_icon_2.png" />
+								</div>
+								<div class="menu_txt">
+									<!-- 添加剂报告 -->
+									test2
+								</div>
+							</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_1">
+								<div class="div_icon">
+									<img src="./images/sample_icon_3.png" />
+								</div>
+								<div class="menu_txt">
+									<!-- 委托加工备案 -->
+									test3
+								</div>
+							</div>
+						</div>
+						<div class="sub_item_cover">
+							<div class="sub_item sub_bg_4">
+								<div class="div_icon">
+									<img src="./images/sample_icon_4.png" />
+								</div>
+								<div class="menu_txt">
+									<!-- 肉制品报告 -->
+									test4
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="grid_2 menu_item " >
+					<div class="menu_bar">
+						<div>
+							<img src="./images/yqdt_ico.png" />
+						</div>
+						<div class="menu_text">
+							<!-- <img src="./images/yqdt.png" /> -->
+						</div>
+					</div>
+				</div>
+				<div class="grid_2 menu_item">
+					<div class="menu_bar ">
+						<div>
+							<img src="./images/zcfg_ico.png" />
+						</div>
+						<div class="menu_text">
+							<!-- <img src="./images/zcfg.png" /> -->
+						</div>
+					</div>
+
+				</div>
+				<div class="grid_2 menu_item ">
+					<div class="menu_bar">
+						<div>
+							<img src="./images/zxfw_ico.png" />
+						</div>
+						<div class="menu_text">
+							<!-- <img src="./images/zxfw.png" /> -->
+						</div>
+					</div>
+				</div>
+				<div class="grid_2 menu_item ">
+					<div class="menu_bar">
+						<div>
+							<img src="./images/pxxx_ico.png" />
+						</div>
+						<div class="menu_text">
+							<!-- <img src="./images/pxxx.png" /> -->
+						</div>
+					</div>
+				</div>
+			</div><!-- div class="grid_12 menu_bg" -->
+			<div class="clear"></div>
+			<div>
+				&nbsp;
+			</div>
+			<div class="grid_8">
+
+				<div class="white_panel clearfix">
+					<div class="clearfix">
+						<div class="pull_left">
+							<div class="breadcrumb">
+								<span class="blue_font">分类分类</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span class="blue_font">分类分类</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span>分类分类</span>
+							</div>
+						</div>
+						<div class="pull_right article_icon">
+							<img src="./images/like.png" />&nbsp;<img src="./images/print.png" />
+						</div>
+					</div>
+					<div class="sub_bg_1 content_title">
+						分类分类分类分类分类分类分类分类分类分类
+					</div>
+					<div class="artile_content">
+				　　新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(487.75, 4.72, 0.98%)公司(以下简称“苹果”)下一代手机iPhone 6将采用4.8英寸屏幕。
+					<br />
+					<br />
+				　　米塞克周一在致客户的一份调研笔记中称，苹果零部件供应商在价格上对苹果变得仁慈，这有助于提升苹果的毛利率。此外，iPhone 6将采用4.8英寸屏幕，这将吸引更多用户。
+					<br />
+					<br />
+				　　米塞克称，当前约50%的智能手机采用4英寸以上屏幕，不提供大屏幕手机，苹果已经失去了这部分市场。当前的苹果最新一代的iPhone 5s仍采用4英寸屏幕。
+					<br />
+					<br />
+				　　米塞克认为，采用4.8英寸屏幕后，iPhone 6将吸引更多消费者升级。确切而言，米塞克预计iPhone 6上市后将至少有8500万iPhone用户升级。iPhone 6预计于明年9月上市。
+					<br />
+					<br />
+				　　为此，米塞克将苹果股票评级从“持有”调高至“买入”，将目标股价从425美元调高至600美元。(李明)
+					<br />
+					<br />
+					新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(487.75, 4.72, 0.98%)公司(以下简称“苹果”)下一代手机iPhone 6将采用4.8英寸屏幕。
+					<br />
+					<br />
+				　　米塞克周一在致客户的一份调研笔记中称，苹果零部件供应商在价格上对苹果变得仁慈，这有助于提升苹果的毛利率。此外，iPhone 6将采用4.8英寸屏幕，这将吸引更多用户。
+					<br />
+					<br />
+				　　米塞克称，当前约50%的智能手机采用4英寸以上屏幕，不提供大屏幕手机，苹果已经失去了这部分市场。当前的苹果最新一代的iPhone 5s仍采用4英寸屏幕。
+					<br />
+					<br />
+				　　米塞克认为，采用4.8英寸屏幕后，iPhone 6将吸引更多消费者升级。确切而言，米塞克预计iPhone 6上市后将至少有8500万iPhone用户升级。iPhone 6预计于明年9月上市。
+					<br />
+					<br />
+				　　为此，米塞克将苹果股票评级从“持有”调高至“买入”，将目标股价从425美元调高至600美元。(李明)
+					<br />
+					<br />
+					新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(487.75, 4.72, 0.98%)公司(以下简称“苹果”)下一代手机iPhone 6将采用4.8英寸屏幕。
+					<br />
+					<br />
+				　　米塞克周一在致客户的一份调研笔记中称，苹果零部件供应商在价格上对苹果变得仁慈，这有助于提升苹果的毛利率。此外，iPhone 6将采用4.8英寸屏幕，这将吸引更多用户。
+					<br />
+					<br />
+				　　米塞克称，当前约50%的智能手机采用4英寸以上屏幕，不提供大屏幕手机，苹果已经失去了这部分市场。当前的苹果最新一代的iPhone 5s仍采用4英寸屏幕。
+					<br />
+					<br />
+				　　米塞克认为，采用4.8英寸屏幕后，iPhone 6将吸引更多消费者升级。确切而言，米塞克预计iPhone 6上市后将至少有8500万iPhone用户升级。iPhone 6预计于明年9月上市。
+					<br />
+					<br />
+				　　为此，米塞克将苹果股票评级从“持有”调高至“买入”，将目标股价从425美元调高至600美元。(李明)
+					<br />
+					<br />
+					新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(487.75, 4.72, 0.98%)公司(以下简称“苹果”)下一代手机iPhone 6将采用4.8英寸屏幕。
+					<br />
+					<br />
+				　　米塞克周一在致客户的一份调研笔记中称，苹果零部件供应商在价格上对苹果变得仁慈，这有助于提升苹果的毛利率。此外，iPhone 6将采用4.8英寸屏幕，这将吸引更多用户。
+					<br />
+					<br />
+				　　米塞克称，当前约50%的智能手机采用4英寸以上屏幕，不提供大屏幕手机，苹果已经失去了这部分市场。当前的苹果最新一代的iPhone 5s仍采用4英寸屏幕。
+					<br />
+					<br />
+				　　米塞克认为，采用4.8英寸屏幕后，iPhone 6将吸引更多消费者升级。确切而言，米塞克预计iPhone 6上市后将至少有8500万iPhone用户升级。iPhone 6预计于明年9月上市。
+					<br />
+					<br />
+				　　为此，米塞克将苹果股票评级从“持有”调高至“买入”，将目标股价从425美元调高至600美元。(李明)
+					<br />
+					<br />
+					</div>
+					<div class="article_foot">
+						<div class="pull_right article_foot_content">
+							发布日期:2013-12-12
+						</div>
+					</div>
+				</div>
+				<div class="bt-shadow"></div>
+				<!-- block over -->
+
+				<!-- block over -->
+
+			</div>
+			<div class="grid_4">
+				<div class="clearfix">
+					<div class="sample_left_panel">
+						<div>
+							<div class="search_panel search_bg">
+								<img class="search_img" src="./images/search_t.png" />
+								<div>
+									<form>
+										<div style="float:left;width:250px">
+											<input class="search_input" type="text"/>
+										</div>
+										<div style="float:left">
+											<img class="search_go" src="./images/search_go.png" />
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="bt-shadow"></div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix">
+
+					<div class="service_block margin_r">
+						<div class="small_bg_1 service_content ">
+							<div>
+								<div class="service_img">
+									<img src="./images/calendar_alt_fill_32x32.png" />
+								</div>
+							</div>
+							<div class="label_text">
+								<!-- 标准备案 -->
+								test1
+							</div>
+						</div>
+						<div class="bt-shadow"></div>
+					</div>
+					<div class="service_block margin_l">
+						<div class="small_bg_2 service_content ">
+							<div>
+								<div class="service_img">
+									<img src="./images/calendar_alt_stroke_32x32.png" />
+								</div>
+							</div>
+							<div class="label_text">
+								<!-- 添加剂报告 -->
+								test2
+							</div>
+						</div>
+						<div class="bt-shadow"></div>
+					</div>
+
+					<div class="service_block margin_r">
+						<div class="small_bg_3 service_content">
+							<div>
+								<div class="service_img">
+									<img src="./images/box_32x32.png" />
+								</div>
+							</div>
+							<div class="label_text">
+								<!-- 委托加工备案 -->
+								test3
+							</div>
+						</div>
+						<div class="bt-shadow"></div>
+					</div>
+					<div class="service_block margin_l">
+						<div class="small_bg_4 service_content ">
+							<div>
+								<div class="service_img">
+									<img src="./images/aperture_alt_32x32.png" />
+								</div>
+							</div>
+							<div class="label_text">
+								<!-- 肉制品报告 -->
+								test4
+							</div>
+						</div>
+						<div class="bt-shadow"></div>
+					</div>
+				</div>
+
+				<div class="white_panel">
+					<div class="title small head_panel clearfix">
+						<div class="cell cell_1 sub_bg_2">
+							<div class="clearfix head_arrow">
+								<div class="list_header">
+									政策法规
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="clearfix">
+						<div class="content_cell">
+							<div class="content_item">
+								作为块级元素的
+							</div>
+						</div>
+						<div class="content_cell">
+							<div class="content_item">
+								作为块级元素的
+							</div>
+						</div>
+						<div class="content_cell">
+							<div class="content_item">
+								作为块级元素的
+							</div>
+						</div>
+						<div class="content_cell">
+							<div class="content_item">
+								作为块级元素的
+							</div>
+						</div>
+						<div class="content_cell">
+							<div class="content_item">
+								作为块级元素的
+							</div>
+						</div>
+					</div>
+					<div class="foot_panel">
+						<div class="more">
+							更多...
+						</div>
+					</div>
+				</div>
+				<div class="bt-shadow"></div>
+
+				<div class=" white_panel">
+					<div class="title small head_panel clearfix">
+						<div class="cell cell_1 sub_bg_1">
+							<div class="clearfix head_arrow">
+								<div class="list_header">
+									资料下载
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="clearfix">
+						<div class="download_block clearfix">
+							<div class="image_container">
+								<img src="./images/word_icon.png"/>
+
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/pdf_ico.png"/>
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/outlook_ico.png"/>
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/excel_ico.png"/>
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/pp_ico.png"/>
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+						<div class="download_block">
+							<div class="image_container">
+								<img src="./images/word_icon.png"/>
+							</div>
+							<div class="download_title">
+								资料下载资料
+							</div>
+						</div>
+
+					</div>
+					<div class="foot_panel">
+						<div class="more">
+							更多...
+						</div>
+					</div>
+				</div>
+				<div class="bt-shadow"></div>
+
+				<!--  block start -->
+
+				<!-- block over -->
+
+				<!-- block over -->
+
+				<!-- block over -->
+
+			</div>
+			<div class="clear">
+				&nbsp;
+			</div>
+			<div class="grid_12 border-b">
+				&nbsp;
+			</div>
+			<div class="clear"></div>
+			<div>
+				&nbsp;
+			</div>
+
+			<div class="grid_3 prefix_1 shadow_home center_text">
+				关于我们
+			</div>
+			<div class="grid_3 shadow_home center_text">
+				联系我们
+			</div>
+			<div class="grid_3 shadow_home center_text">
+				版权所有
+			</div>
+
+			<div class="clear"></div>
+			<div>
+				&nbsp;
+			</div>
+			<div class="grid_6 prefix_2 shadow_home center_text">
+				http://www.pdspzjxh.com
+			</div>
+			<div>
+				&nbsp;
+			</div>
+			<div>
+				&nbsp;
+			</div>
+			<div>
+				&nbsp;
+			</div>
+			<div>
+				&nbsp;
+			</div>
+
+		</div><!--  div class="container_12"-->
+		<script>
+			// $(function() {
+			// $('#slides').slidesjs({
+			// width : 540,
+			// height : 300,
+			// navigation : true,
+			// play : {
+			// active : true,
+			// auto : true,
+			// interval : 4000,
+			// pauseOnHover : true,
+			// restartDelay : 2500
+			// }
+			// });
+			// });
+			$('#any_id').barousel();
+		</script>
+	</body>
+</html>
+
+<!-- <div class="title small head_panel">
+<div class="cell cell_3 border-b select_cell border-r">
+首页
+</div>
+<div class="cell cell_3 border-b border-rborder-r">
+首页
+</div>
+<div class="cell cell_3 border-b">
+首页
+</div>
+</div>
+<div class="clearfix">
+<div class="clearfix first_news">
+<div class="title_image pull_left">
+<div class="nailthumb-container">
+<img src="./images/avator.png"/>
+</div>
+</div>
+<div class="pull_left">
+<div class="big_title">
+作为块级元素的表格table显示
+</div>
+<div class="clearfix">
+<div class="new_date tiny pull_right">
+2012-10-12
+</div>
+</div>
+<div class="first_news_content">
+作为块级元素的表格table 显示作为块级元素的表格tabl e显示作为块级元素的表格table 显示作为块级元素的表 格table显示作为块级元素的表格table显示
+</div>
+</div>
+</div>
+<div class="content_cell">
+作为块级元素的表格table显示，也就是将他作为一个表格
+</div>
+<div class="content_cell">
+作为块级元素的表格table显示，也就是将他作为一个表格
+</div>
+<div class="content_cell">
+作为块级元素的表格table显示，也就是将他作为一个表格
+</div>
+<div class="content_cell">
+作为块级元素的表格table显示，也就是将他作为一个表格
+</div>
+<div class="content_cell">
+作为块级元素的表格table显示，也就是将他作为一个表格
+</div>
+</div>
+<div class="foot_panel title small">
+<div class="cell cell_3 foot_cell">
+表格
+</div>
+<div class="cell cell_3 pull_right foot_cell">
+显示
+</div>
+</div> -->
+
+<!-- <div class=" white_panel">
+<div class="head_image_panel tmp_header_image_bg">
+
+</div>
+<div class="tmp_blank_bg clearfix">
+<div class="icon_div_4">
+<div class="tmp_icon">
+<img src="./images/1380291917_sun-cloud.png"/>
+</div>
+</div>
+<div class="icon_div_4 ">
+<div class="tmp_icon">
+<img src="./images/1380291925_wind-symbol.png"/>
+</div>
+</div>
+<div class="icon_div_4">
+<div class="tmp_icon">
+<img src="./images/1380291935_rain.png"/>
+</div>
+</div>
+<div class="icon_div_4">
+<div class="tmp_icon">
+<img src="./images/1380291940_sun-symbol.png"/>
+</div>
+</div>
+</div>
+<div class="foot_panel black_bg"></div>
+</div>
+<div class="bt-shadow"></div> -->
+
+<!-- <div class=" white_panel clearfix small_bg">
+
+<div class="left_tab">
+<div class="left_tab_item left_tab_item_selected" select="true">
+<img class="lefft_image_icon" src="./images/test_left_icoon.png" />
+<div class="left_slide">
+<div class="left_slide_txt">
+音乐播放器
+</div>
+
+</div>
+</div>
+<div class="left_tab_item">
+<img class="lefft_image_icon" src="./images/test_left_icon_1.png" />
+<div class="left_slide">
+<div class="left_slide_txt">
+音乐播放器
+</div>
+
+</div>
+</div>
+<div class="left_tab_item">
+<img class="lefft_image_icon" src="./images/test_left_icon_2.png" />
+<div class="left_slide">
+<div class="left_slide_txt">
+音乐播放器
+</div>
+
+</div>
+</div>
+</div>
+<div class="content_right clearfix">
+<div class="text_shadow_content shadow_title" >
+<div  class="shadow_title_line">
+<div>
+表格显示
+</div>
+</div>
+
+</div>
+<div class="text_shadow_content shadow_small">
+作为块级元素的表格table 显示作为块级元素的表格tabl e显示作为块级元素的表格table 显示作为块级元素的表 格table显示作为块级元素的表格table显示
+</div>
+</div>
+</div>
+<div class="bt-shadow"></div>-->
+
+<!-- <div class=" white_panel">
+<div class="title small  blue_header">
+<div class="cell cell_1">
+<div class="cell_5">
+Good
+</div>
+</div>
+</div>
+<div class="clearfix">
+<div class="left_panel_block pull_left">
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+<div>
+&nbsp;
+</div>
+</div>
+<div class="pull_left">
+<div>
+&nbsp;
+</div>
+</div>
+</div>
+<div class="foot_panel title small">
+<div class="cell cell_3 foot_cell">
+表格
+</div>
+<div class="cell cell_3 pull_right foot_cell">
+显示
+</div>
+</div>
+</div>
+<div class="bt-shadow"></div> -->

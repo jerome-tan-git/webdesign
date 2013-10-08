@@ -22,7 +22,22 @@ body
 	font-family: "微软雅黑",Arial,"宋体";
 	color:#666;   
 }
+.blue_font
+{
+	color:#0044CC;
+}
+.breadcrumb{
+	font-size: 11pt;
+	padding-top: 20px;
+	padding-left: 24px;
+	width:400px;
+}
 
+.article_icon
+{
+	padding-top:10px;
+	padding-right: 10px;
+}
 .menu_list 
 {
 	position: relative;
@@ -391,15 +406,38 @@ body
 	opacity: 0.7;*/
 }
 
+.artile_content{
+	margin-top: 30px;
+	margin-left: 45px;
+	margin-right: 45px;
+}
+.article_foot{
+	height:35px;
+	padding-top:30px;
+	text-align:right;
+	margin-right: 28px;
+}
 
+.article_foot_content
+{
+	font-size:9pt;
+	width:150px;
+	color:#A2A2A2;
+}
 .right_tab
 {
 
 	float:left;
 	height: 100px;
-	
-	
-	
+}
+.content_title
+{
+	margin-top: 30px;
+	font-size: 18pt;
+	padding-left: 29px;
+	padding-top: 10px;
+	padding-bottom:10px;
+	/*height: 40px;*/
 }
 .content_right{
 	float:left;
