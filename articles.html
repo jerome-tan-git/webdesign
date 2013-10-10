@@ -12,10 +12,57 @@
 		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slides.min.js"></script>
+		<script type="text/javascript" src="js/jquery-migrate.js"></script>
 		<script type="text/javascript" src="js/jquery.barousel.js"></script>
+		<script type="text/javascript" src="js/shCore.js"></script>
+		<script type="text/javascript" src="js/shBrushJScript.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
 		<script type="text/javascript">
+		$(window).hashchange(function(){
+				// alert(1);
+				var hash = location.hash;
+				var tmp_hash = ( hash.replace( /^#/, '' ) || 'blank' ) + '.';
+				document.title = 'The hash is ' + start_hash + "==>" + tmp_hash;
+				start_hash = tmp_hash;
+				getArticles();
+			});
+			function fillData(data)
+			{
+				var article_str = "";
+				for(i=0;i<data.length;i++)
+				{
+					article_str+="<div class='article_block'><div class='list_title'>"+data[i].title+"</div><div>"+data[i].content+"</div></div>";
+				}
+				$(".list_block").html(article_str);
+			}
+			function getArticles()
+			{
+				$(".loading_articles").show();
+				var aj = $.ajax( {    
+			    url:'./a.json', 
+			    type:'post',    
+			    cache:false,    
+			    dataType:'json',    
+			    success:function(data) {   
+			    	$(".loading_articles").hide();
+			    	$(".list_block").animate({opacity : 0,left : "-70px"}, 'slow',function(){
+								$(".list_block").css("left","100px");
+								fillData(data.articles);
+								$(".list_block").animate({ opacity : 1, left : "0px" }, 'slow');
+							});                
+			     },    
+			     error : function() {    
+			          alert("Load page fail!");    
+			     }    
+				});
+			}
+		</script>
+		
+		
+		
+		<script type="text/javascript">
+			var start_hash;
 			$(document).ready(function() {
-				//menu_bar
 				$(".menu_item").hover(function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
 					$(this).addClass("menu_mouse_over");
@@ -33,9 +80,7 @@
 						backgroundColor : "#ffffff"
 					}, 'low');
 					// $(this).parent().css('background','#F');
-					$(this).animate({
-						left : '4px'
-					});
+					$(this).animate({left : '4px'});
 				}, function() {
 					$(this).parent().animate({
 						backgroundColor : "#F5F5F5"
@@ -47,11 +92,23 @@
 				
 				
 				$('#pageNext').bind('click', function() {
-						 $(".list_block").animate({
-						 	opacity : 0,
-							left : "-620px"
-						}, 'fast',function(){alert(1);});
-						
+					 var cUrl = window.location.href;
+					 var re = /#(\d+)/i;
+ 					
+					 var arr = re.exec(window.location.href);
+					 var currentPage = 0;
+					 var currentURL = cUrl.split("#")[0];
+ 					
+					 if (arr !=null)
+					 {
+						 currentPage = parseInt(arr[1]);
+					 }
+					  var nextPage = currentPage+1;
+					 // alert(currentPage);
+					 // alert(currentURL +"#"+(nextPage));
+ 					 
+					// //var startPage = 
+					window.location.href = currentURL +"#"+nextPage;
 				});
 				
 				$('.left_tab_item').hover(function() {
@@ -252,8 +309,13 @@
 						<div class="pull_right article_icon">
 							<img src="./images/pre_page.png" />&nbsp;<img src="./images/next_page.png" id="pageNext" />
 						</div>
+						<div class="loading_articles">
+							<img src="./images/5-121204194036-50.gif" />
+						</div>
 					</div>
+					
 					<div class="list_block clearfix">
+						
 						<div class="article_block">
 							<div class="list_title"> 
 								分析师称iPhone 6将采用4.8英寸屏幕
@@ -536,21 +598,9 @@
 			</div>
 
 		</div><!--  div class="container_12"-->
+		
 		<script>
-			// $(function() {
-			// $('#slides').slidesjs({
-			// width : 540,
-			// height : 300,
-			// navigation : true,
-			// play : {
-			// active : true,
-			// auto : true,
-			// interval : 4000,
-			// pauseOnHover : true,
-			// restartDelay : 2500
-			// }
-			// });
-			// });
+
 			$('#any_id').barousel();
 		</script>
 	</body>

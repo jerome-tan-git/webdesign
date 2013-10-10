@@ -488,6 +488,13 @@ body
 	
 	border-bottom:1px solid #ffffff;
 }
+
+.loading_articles
+{
+	position: absolute;
+	z-index: 10;
+	display: none;
+}
 .shadow_small
 {
 	/*padding-left: 110px;*/
