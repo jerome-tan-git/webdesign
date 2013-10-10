@@ -31,6 +31,7 @@ body
 	padding-top: 20px;
 	padding-left: 24px;
 	width:400px;
+	margin-bottom:50px;
 }
 
 .article_icon
@@ -417,7 +418,16 @@ body
 	text-align:right;
 	margin-right: 28px;
 }
+.list_block
+{
+	position: relative;	
+}
 
+.article_block{
+	margin-left:45px;
+	margin-right:45px;
+	margin-bottom:35px;
+}
 .article_foot_content
 {
 	font-size:9pt;
@@ -432,12 +442,16 @@ body
 }
 .content_title
 {
-	margin-top: 30px;
 	font-size: 18pt;
 	padding-left: 29px;
 	padding-top: 10px;
 	padding-bottom:10px;
-	/*height: 40px;*/
+}
+
+.list_title
+{
+	font-size: 18pt;
+	margin-bottom:10px;
 }
 .content_right{
 	float:left;

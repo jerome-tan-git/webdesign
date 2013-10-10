@@ -44,7 +44,15 @@
 						left : '0px'
 					});
 				});
-
+				
+				
+				$('#pageNext').bind('click', function() {
+						 $(".list_block").animate({
+						 	opacity : 0,
+							left : "-620px"
+						}, 'fast');
+				});
+				
 				$('.left_tab_item').hover(function() {
 
 					$(this).find(".left_slide").css('display', 'block');
@@ -234,7 +242,42 @@
 			<div class="grid_8">
 
 				<div class="white_panel clearfix" style="height:1000px">
-					
+					<div class="clearfix">
+						<div class="pull_left">
+							<div class="breadcrumb">
+								<span class="blue_font">分类分类</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span>分类分类</span>
+							</div>
+						</div>
+						<div class="pull_right article_icon">
+							<img src="./images/pre_page.png" />&nbsp;<img src="./images/next_page.png" id="pageNext" />
+						</div>
+					</div>
+					<div class="list_block clearfix">
+						<div class="article_block">
+							<div class="list_title"> 
+								分析师称iPhone 6将采用4.8英寸屏幕
+							</div>
+							<div>
+								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称
+							</div>
+						</div>
+						<div class="article_block">
+							<div class="list_title"> 
+								分析师称iPhone 6将采用4.8英寸屏幕
+							</div>
+							<div>
+								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(486.59, 5.65, 1.17%)公司
+							</div>
+						</div>
+						<div class="article_block">
+							<div class="list_title"> 
+								分析师称iPhone 6将采用4.8英寸屏幕
+							</div>
+							<div>
+								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)
+							</div>
+						</div>
+					</div>
 				</div>
 				<div class="bt-shadow"></div>
 				<!-- block over -->
