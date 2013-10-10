@@ -569,6 +569,10 @@ body
 {
 	float: left;
 }
+.hand
+{
+	cursor: pointer;
+}
 .search_go
 {
 	padding-top: 26px;
