@@ -18,218 +18,240 @@
 		<script type="text/javascript" src="js/shBrushJScript.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
 		<script type="text/javascript">
-		var last_page=0;
-		var pageStop = "";
-		var isBusy=0;
-		var currentArticleID = -1;
-		function getPageNum()
-		{
-			var cUrl = window.location.href;
-			var currentURL = cUrl.split("#")[0];
-			var re = /#(\d+)/i;
-			
-			var arr = re.exec(window.location.href);
-			var currentPage = 0;
-			if (arr !=null)
-			{
-				currentPage = parseInt(arr[1]);
-			}
-			return currentPage;
-		}
-		
-		function getArticleID()
-		{
-			var cUrl = window.location.href;
-			
-			var re = /#\d+#(\d+)/i;
-			
-			var arr = re.exec(window.location.href);
-			var articleID = -1;
-			if (arr !=null)
-			{
-				if (!isNaN(arr[1]))
-				{
-					articleID = parseInt(arr[1]);
+			var last_page = 0;
+			var pageStop = "";
+			var isBusy = 0;
+			var currentArticleID = -1;
+			function getPageNum() {
+				var cUrl = window.location.href;
+				var currentURL = cUrl.split("#")[0];
+				var re = /#(\d+)/i;
+
+				var arr = re.exec(window.location.href);
+				var currentPage = 0;
+				if (arr != null) {
+					currentPage = parseInt(arr[1]);
 				}
+				return currentPage;
 			}
-			return articleID;
-		}
-		//var this_page=0;
-		$(window).hashchange(function(){
-				//alert(getArticleID()+" | " +  currentArticleID);	
-				if((last_page != getPageNum()) || (getArticleID()==-1 && currentArticleID!=-1))
-				{
+
+			function getArticleID() {
+				var cUrl = window.location.href;
+
+				var re = /#\d+#(\d+)/i;
+
+				var arr = re.exec(window.location.href);
+				var articleID = -1;
+				if (arr != null) {
+					if (!isNaN(arr[1])) {
+						articleID = parseInt(arr[1]);
+					}
+				}
+				return articleID;
+			}
+
+			//var this_page=0;
+			$(window).hashchange(function() {
+
+				if ((last_page != getPageNum()) || (getArticleID() == -1 && currentArticleID != -1)) {
+					//alert(getArticleID()+" | " +  currentArticleID);
 					getArticles();
 				}
 
-				if(getArticleID()!=-1)
-				{	
+				if (getArticleID() != -1) {
 					currentArticleID = getArticleID();
 					showArticle(currentArticleID);
 				}
-				
+
 			});
-			
-			function fillArtile(data)
-			{
-				var article_str = "<div class=\"artile_body\"><div class=\"sub_bg_1 content_title\">"+data.title+"</div><div class=\"artile_content\">"+data.cur_page+"</div></div>";
+
+			function fillArtile(data) {
+				var article_str = "<div class=\"artile_body\"><div class=\"sub_bg_1 content_title\">" + data.title + "</div><div class=\"artile_content\">" + data.cur_page + "</div></div>";
 				$(".list_block").html(article_str);
 			}
-			
-			function showArticle(articleID)
-			{	
-				
-				var aj = $.ajax({    
-			    url:'./b.json_'+articleID, 
-			    type:'get',    
-			    cache:false,    
-			    dataType:'json',    
-			    success:function(data) {   
-			    	//alert(data.title);
-			    		var blockHeight = $(".list_block").outerHeight();
-			    		if (blockHeight==0)
-			    		{
-			    			blockHeight = 100;
-			    		}
-						$('.article_icon').animate({opacity : 0,left : "70px"},'slow');
-						$('.page_number').animate({opacity : 0,left : "100px"},'slow');
-						$(".list_block").animate({opacity : 0,left : "-100px"},'slow',
-						function()
-						{
-							$(".list_block").css("height",blockHeight);
+
+			function showArticle(articleID) {
+
+				var aj = $.ajax({
+					url : './b.json_' + articleID,
+					type : 'get',
+					cache : false,
+					dataType : 'json',
+					success : function(data) {
+						//alert(data.title);
+						var blockHeight = $(".list_block").outerHeight();
+						if (blockHeight == 0) {
+							blockHeight = 100;
+						}
+						$('.article_icon').animate({
+							opacity : 0,
+							left : "70px"
+						}, 'slow');
+						$('.page_number').animate({
+							opacity : 0,
+							left : "100px"
+						}, 'slow');
+						$(".list_block").animate({
+							opacity : 0,
+							left : "-100px"
+						}, 'slow', function() {
+							$(".list_block").css("height", blockHeight);
 							$(".list_block").html("");
 							fillArtile(data);
-							$(".list_block").css("left","0px");
-							$(".artile_content").css("opacity","0");
-							$(".artile_content").css("top","10px");
-							$(".list_block").animate({opacity : 1},'slow',function()
-							{
+							$(".list_block").css("left", "0px");
+							$(".artile_content").css("opacity", "0");
+							$(".artile_content").css("top", "10px");
+							$(".list_block").animate({
+								opacity : 1
+							}, 'slow', function() {
 								var newHeight = $(".artile_body").outerHeight();
-								$(".list_block").animate({height: newHeight+"px"},1000,'swing',function()
-								{
-									$(".artile_content").animate({opacity : 1, top: "0px"}, 'slow', function()
-									{
-										
+								$(".list_block").animate({
+									height : newHeight + "px"
+								}, 1000, 'swing', function() {
+									$(".artile_content").animate({
+										opacity : 1,
+										top : "0px"
+									}, 'slow', function() {
+
 									});
 								});
-								// $(".artile_content").animate({opacity : 1, top: "0px"}, 'slow', function()
-								// {
-// 									
-								// });
 							});
-							
+
 						});
-			    	
-			     },    
-			     error : function() {    
-			     		
-			          alert("Load page fail! ");
-			     }    
+
+					},
+					error : function() {
+
+						alert("Load page fail! ");
+					}
 				});
 			}
-			
-			
-			function fillData(data, curPage)
-			{
+
+			function fillData(data, curPage) {
 				var article_str = "";
-				
-				for(i=0;i<data.length;i++)
-				{
-					article_str+="<div class='article_block'><div class='list_title'><a href='#"+(curPage-1)+"#"+data[i].id+"'>"+data[i].title+"</a></div><div>"+data[i].content+"</div></div>";
+
+				for ( i = 0; i < data.length; i++) {
+					article_str += "<div class='article_block'><div class='list_title'><a href='#" + (curPage - 1) + "#" + data[i].id + "'>" + data[i].title + "</a></div><div>" + data[i].content + "</div></div>";
 				}
-				$(".list_block").html("<div class='all_list'>"+article_str+"</div>");
+				$(".list_block").html("<div class='all_list'>" + article_str + "</div>");
 			}
-			function getArticles()
-			{
-				isBusy=1;
+
+			function getArticles() {
+				//alert(1);
+				isBusy = 1;
 				var this_page = getPageNum();
 				$(".loading_articles").show();
-				var aj = $.ajax( {    
-			    url:'./a.json_'+this_page, 
-			    type:'get',    
-			    cache:false,    
-			    dataType:'json',    
-			    success:function(data) {   
-			    	$(".loading_articles").hide();
-			    	if(this_page>last_page)
-			    	{	
-			    		
-			    		$(".list_block").animate({opacity : 0,left : "-70px"}, 'slow',function(){
-								$(".list_block").css("left","70px");
+				var aj = $.ajax({
+					url : './a.json_' + this_page,
+					type : 'get',
+					cache : false,
+					dataType : 'json',
+					success : function(data) {
+						$(".loading_articles").hide();
+						alert(this_page + " | " + last_page + "| current article ID: " + currentArticleID);
+
+						if (this_page > last_page) {
+
+							$(".list_block").animate({
+								opacity : 0,
+								left : "-70px"
+							}, 'slow', function() {
+								$(".list_block").css("left", "70px");
 								fillData(data.articles, parseInt(data.cur_page));
 								var newHeight = $('.all_list').outerHeight();
-								$(".list_block").animate({height: newHeight+"px"},'slow',function()
-								{
-									$(".list_block").animate({ opacity : 1, left : "0px" }, 'slow',
-									function()
-									{
-										isBusy=0;
-									});	
+								$(".list_block").animate({
+									height : newHeight + "px"
+								}, 'slow', function() {
+									$(".list_block").animate({
+										opacity : 1,
+										left : "0px"
+									}, 'slow', function() {
+										isBusy = 0;
+									});
 								});
-								
+
 							});
-					}
-					else if (this_page<last_page)
-					{
-						$(".list_block").animate({opacity : 0,left : "70px"}, 'slow',function(){
-								$(".list_block").css("left","-70px");
+						} else if (this_page < last_page) {
+							$(".list_block").animate({
+								opacity : 0,
+								left : "70px"
+							}, 'slow', function() {
+								$(".list_block").css("left", "-70px");
 								fillData(data.articles, parseInt(data.cur_page));
 								var newHeight = $('.all_list').outerHeight();
-								$(".list_block").animate({height: newHeight+"px"},'slow',function()
-								{
-									$(".list_block").animate({ opacity : 1, left : "0px" }, 'slow',
-									function()
-									{
-										isBusy=0;
-									});	
+								$(".list_block").animate({
+									height : newHeight + "px"
+								}, 'slow', function() {
+									$(".list_block").animate({
+										opacity : 1,
+										left : "0px"
+									}, 'slow', function() {
+										isBusy = 0;
+									});
 								});
 							});
+						} else if (currentArticleID != -1) {
+							$(".list_block").animate({
+								opacity : 0
+							}, 'slow', function() {
+								$(".list_block").css("left", "70px");
+								fillData(data.articles, parseInt(data.cur_page));
+								var newHeight = $('.all_list').outerHeight();
+								$(".list_block").animate({
+									height : newHeight + "px"
+								}, 'slow', function() {
+									$(".list_block").animate({
+										opacity : 1,
+										left : "0px"
+									}, 'slow', function() {
+										isBusy = 0;
+									});
+								});
+
+							});
+						}
+						last_page = getPageNum();
+						pageStop = data.pageStop;
+						if (data.pageStop == "last") {
+							$(".pageNext").animate({
+								opacity : 0.5
+							});
+						} else {
+							$(".pageNext").animate({
+								opacity : 1
+							});
+						}
+						if (data.pageStop == "first") {
+							$(".pagePrev").animate({
+								opacity : 0.5
+							});
+						} else {
+							$(".pagePrev").animate({
+								opacity : 1
+							});
+						}
+
+						if (data.cur_page != null) {
+							$(".curren_page_num").html(data.cur_page);
+						}
+						if (data.total_page != null) {
+							$(".total_num").html("/" + data.total_page);
+						}
+					},
+					error : function() {
+						isBusy = 0;
+						alert("Load page fail! " + url);
 					}
-			    	last_page = getPageNum();
-			    	pageStop = data.pageStop;
-			    	if (data.pageStop=="last")
-			    	{
-			    		$(".pageNext").animate({ opacity : 0.5});
-			    	}
-			    	else 
-			    	{
-			    		$(".pageNext").animate({ opacity : 1});
-			    	}
-			    	if (data.pageStop=="first")
-			    	{
-			    		$(".pagePrev").animate({ opacity : 0.5});
-			    	}
-			    	else 
-			    	{
-			    		$(".pagePrev").animate({ opacity : 1});
-			    	}
-			    	
-			    	
-			    	if (data.cur_page!=null)
-			    	{
-			    		$(".curren_page_num").html(data.cur_page);
-			    	}
-			    	if (data.total_page!=null)
-			    	{
-			    		$(".total_num").html("/"+data.total_page);
-			    	}
-			     },    
-			     error : function() {    
-			     		isBusy=0;
-			          alert("Load page fail! "+url);
-			     }    
 				});
-				
+
 			}
 		</script>
-		
-		
-		
+
 		<script type="text/javascript">
 			var start_hash;
 			$(document).ready(function() {
-				isBusy=0;
-				last_page=-1;
+				isBusy = 0;
+				last_page = -1;
 				$(".menu_item").hover(function() {
 					ddmenuitem = $(this).find('.menu_list').eq(0);
 					$(this).addClass("menu_mouse_over");
@@ -241,20 +263,20 @@
 					ddmenuitem.fadeOut(500);
 
 				});
-				if(getArticleID()!=-1)
-				{	
+				if (getArticleID() != -1) {
 					currentArticleID = getArticleID();
 					showArticle(currentArticleID);
-				}else
-				{
+				} else {
 					getArticles();
 				}
-				
+
 				$('.sub_item').hover(function() {
 					$(this).parent().animate({
 						backgroundColor : "#ffffff"
 					}, 'low');
-					$(this).animate({left : '4px'});
+					$(this).animate({
+						left : '4px'
+					});
 				}, function() {
 					$(this).parent().animate({
 						backgroundColor : "#F5F5F5"
@@ -263,30 +285,27 @@
 						left : '0px'
 					});
 				});
-				
-				
+
 				$('.pageNext').bind('click', function() {
-					if (pageStop != "last" && isBusy==0)
-					{
+					if (pageStop != "last" && isBusy == 0) {
 						var cUrl = window.location.href;
 						var currentURL = cUrl.split("#")[0];
 						last_page = getPageNum();
-						var nextPage = getPageNum()+1;
-						window.location.href = currentURL +"#"+nextPage;
+						var nextPage = getPageNum() + 1;
+						window.location.href = currentURL + "#" + nextPage;
 					}
-					
+
 				});
-				
+
 				$('.pagePrev').bind('click', function() {
-					if (pageStop != "first" && isBusy==0)
-					{
+					if (pageStop != "first" && isBusy == 0) {
 						var cUrl = window.location.href;
 						var currentURL = cUrl.split("#")[0];
 						last_page = getPageNum();
-						var nextPage = getPageNum()-1;
-						window.location.href = currentURL +"#"+nextPage;
+						var nextPage = getPageNum() - 1;
+						window.location.href = currentURL + "#" + nextPage;
 					}
-					
+
 				});
 				$('.left_tab_item').hover(function() {
 
@@ -494,11 +513,12 @@
 							<img src="./images/win8.gif" />
 						</div>
 					</div>
-					
+
 					<div class="list_block clearfix">
 
 					</div>
-					<div class="article_foot clearfix">&nbsp;
+					<div class="article_foot clearfix">
+						&nbsp;
 						<div class="pull_right article_icon">
 							<img class="hand pagePrev" src="./images/pre_page.png" />&nbsp;<img class="hand pageNext" src="./images/next_page.png"/>
 						</div>
@@ -763,9 +783,8 @@
 			</div>
 
 		</div><!--  div class="container_12"-->
-		
-		<script>
 
+		<script>
 			$('#any_id').barousel();
 		</script>
 	</body>
