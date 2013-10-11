@@ -413,10 +413,9 @@ body
 	margin-right: 45px;
 }
 .article_foot{
-	height:35px;
-	padding-top:30px;
 	text-align:right;
-	margin-right: 28px;
+	padding-bottom: 5px;
+	/*margin-right: 28px;*/
 }
 .list_block
 {
@@ -488,12 +487,22 @@ body
 	
 	border-bottom:1px solid #ffffff;
 }
-
+.curren_page_num
+{
+	font-size:18pt;
+	color:#000000;
+}
+.page_number
+{
+	margin-top: 12px;
+	margin-right: 20px; 
+}
 .loading_articles
 {
-	position: absolute;
+	position: relative;
 	z-index: 10;
-	display: none;
+	right: 177px
+	/*display: none;*/
 }
 .shadow_small
 {
