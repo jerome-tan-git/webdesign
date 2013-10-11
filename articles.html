@@ -18,12 +18,23 @@
 		<script type="text/javascript" src="js/shBrushJScript.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
 		<script type="text/javascript">
+		var last_page=0;
+		function getPageNum()
+		{
+			var cUrl = window.location.href;
+			var currentURL = cUrl.split("#")[0];
+			var re = /#(\d+)/i;
+			
+			var arr = re.exec(window.location.href);
+			var currentPage = 0;
+			if (arr !=null)
+			{
+				currentPage = parseInt(arr[1]);
+			}
+			return currentPage;
+		}
+		//var this_page=0;
 		$(window).hashchange(function(){
-				// alert(1);
-				var hash = location.hash;
-				var tmp_hash = ( hash.replace( /^#/, '' ) || 'blank' ) + '.';
-				document.title = 'The hash is ' + start_hash + "==>" + tmp_hash;
-				start_hash = tmp_hash;
 				getArticles();
 			});
 			function fillData(data)
@@ -37,22 +48,35 @@
 			}
 			function getArticles()
 			{
+				var this_page = getPageNum();
 				$(".loading_articles").show();
 				var aj = $.ajax( {    
-			    url:'./a.json', 
+			    url:'./a.json_'+this_page, 
 			    type:'post',    
 			    cache:false,    
 			    dataType:'json',    
 			    success:function(data) {   
 			    	$(".loading_articles").hide();
-			    	$(".list_block").animate({opacity : 0,left : "-70px"}, 'slow',function(){
-								$(".list_block").css("left","100px");
+			    	if(this_page>last_page)
+			    	{	
+			    		$(".list_block").animate({opacity : 0,left : "-70px"}, 'slow',function(){
+								$(".list_block").css("left","70px");
 								fillData(data.articles);
 								$(".list_block").animate({ opacity : 1, left : "0px" }, 'slow');
-							});                
+							});
+					}
+					else if (this_page<last_page)
+					{
+						$(".list_block").animate({opacity : 0,left : "70px"}, 'slow',function(){
+								$(".list_block").css("left","-70px");
+								fillData(data.articles);
+								$(".list_block").animate({ opacity : 1, left : "0px" }, 'slow');
+							});
+					}
+			    	last_page = getPageNum();
 			     },    
 			     error : function() {    
-			          alert("Load page fail!");    
+			          alert("Load page fail! "+url);    
 			     }    
 				});
 			}
@@ -74,6 +98,8 @@
 					ddmenuitem.fadeOut(500);
 
 				});
+				last_page=-1;
+				getArticles();
 				//menu_
 				$('.sub_item').hover(function() {
 					$(this).parent().animate({
@@ -92,25 +118,20 @@
 				
 				
 				$('#pageNext').bind('click', function() {
-					 var cUrl = window.location.href;
-					 var re = /#(\d+)/i;
- 					
-					 var arr = re.exec(window.location.href);
-					 var currentPage = 0;
-					 var currentURL = cUrl.split("#")[0];
- 					
-					 if (arr !=null)
-					 {
-						 currentPage = parseInt(arr[1]);
-					 }
-					  var nextPage = currentPage+1;
-					 // alert(currentPage);
-					 // alert(currentURL +"#"+(nextPage));
- 					 
-					// //var startPage = 
+					var cUrl = window.location.href;
+					var currentURL = cUrl.split("#")[0];
+					last_page = getPageNum();
+					var nextPage = getPageNum()+1;
 					window.location.href = currentURL +"#"+nextPage;
 				});
 				
+				$('#pagePrev').bind('click', function() {
+					var cUrl = window.location.href;
+					var currentURL = cUrl.split("#")[0];
+					last_page = getPageNum();
+					var nextPage = getPageNum()-1;
+					window.location.href = currentURL +"#"+nextPage;
+				});
 				$('.left_tab_item').hover(function() {
 
 					$(this).find(".left_slide").css('display', 'block');
@@ -307,7 +328,7 @@
 							</div>
 						</div>
 						<div class="pull_right article_icon">
-							<img class="hand" src="./images/pre_page.png" />&nbsp;<img class="hand" src="./images/next_page.png" id="pageNext" />
+							<img class="hand" src="./images/pre_page.png" id="pagePrev" />&nbsp;<img class="hand" src="./images/next_page.png" id="pageNext" />
 						</div>
 						<div class="loading_articles">
 							<img src="./images/5-121204194036-50.gif" />
@@ -315,31 +336,7 @@
 					</div>
 					
 					<div class="list_block clearfix">
-						
-						<div class="article_block">
-							<div class="list_title"> 
-								分析师称iPhone 6将采用4.8英寸屏幕
-							</div>
-							<div>
-								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称
-							</div>
-						</div>
-						<div class="article_block">
-							<div class="list_title"> 
-								分析师称iPhone 6将采用4.8英寸屏幕
-							</div>
-							<div>
-								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)周一发布报告称，苹果(486.59, 5.65, 1.17%)公司
-							</div>
-						</div>
-						<div class="article_block">
-							<div class="list_title"> 
-								分析师称iPhone 6将采用4.8英寸屏幕
-							</div>
-							<div>
-								新浪科技讯 北京时间10月7日晚间消息，美国投资银行Jefferies分析师彼得·米塞克(Peter Misek)
-							</div>
-						</div>
+
 					</div>
 					<div class="article_foot">&nbsp;
 						

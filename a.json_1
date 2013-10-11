@@ -1,0 +1,20 @@
+{
+	"articles": 
+	[
+		{ 	
+			"title":"page_2" , 
+			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域" 
+		},
+		
+		{ 	"title":"jQuery Ajax 实例 ($.aj\"ax、$.post、$.get)" , 
+			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域" 
+		},
+		
+		{ 	"title":"#代表网页中的一个位置" , 
+			"content":"可以看到，只是请求index.html，根本没有\"#print\"的部分,MYSQL外键(Foreign Key)的使用 在MySQL 3.23.44版本后,InnoDB引擎类型的表支持了外键约束。外键的使用条件:1.两个表必须是InnoDB表,MyISAM表暂时不支持外键" 	
+		},
+		{ 	"title":"浏览器实际发出的请求是这样的" , 
+			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
+		}
+	]
+}
