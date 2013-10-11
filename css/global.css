@@ -515,9 +515,8 @@ body
 }
 .loading_articles
 {
-	position: relative;
+	position: absolute;
 	z-index: 10;
-	right: 177px;
 	display: none;
 }
 .shadow_small
