@@ -8,6 +8,10 @@
  	src: url("../font/MSYHBD.TTF");
 }
 */
+a img
+{ 
+	border:none;
+}
 .menu_bg{
 	background: url("../images/bt-bg-all.png");
    	height:124px;
@@ -484,7 +488,14 @@ body
 	text-shadow: #333333 2px 2px 2px;
 	font-size: 11pt;
 }
-
+.article_back
+{
+	position: relative;
+	left: 169px;
+	display:none; 
+	cursor:pointer;
+	top:0px;
+}
 .shadow_title_line
 {
 	
@@ -506,8 +517,8 @@ body
 {
 	position: relative;
 	z-index: 10;
-	right: 177px
-	/*display: none;*/
+	right: 177px;
+	display: none;
 }
 .shadow_small
 {
