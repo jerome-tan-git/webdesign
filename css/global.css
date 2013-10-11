@@ -38,6 +38,7 @@ body
 {
 	padding-top:10px;
 	padding-right: 10px;
+	position: relative;
 }
 .menu_list 
 {
@@ -411,6 +412,7 @@ body
 	margin-top: 30px;
 	margin-left: 45px;
 	margin-right: 45px;
+	position: relative;
 }
 .article_foot{
 	text-align:right;
@@ -420,6 +422,7 @@ body
 .list_block
 {
 	position: relative;	
+	height: 100px;
 }
 
 .article_block{
@@ -489,13 +492,15 @@ body
 }
 .curren_page_num
 {
+	
 	font-size:18pt;
 	color:#000000;
 }
 .page_number
 {
 	margin-top: 12px;
-	margin-right: 20px; 
+	margin-right: 20px;
+	position: relative; 
 }
 .loading_articles
 {
