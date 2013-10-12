@@ -7,41 +7,32 @@
 		{ 	
 			"title":"page_1" ,
 			"id":"1", 
-			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域" 
+			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚",
+			"image":"./images/article_cover.png"
 		},
 		
-		{ 	"title":"jQuery Ajax 实例 ($.aj\"ax、$.post、$.get)" ,
+		{ 	"title":"jQuery Ajax 实例 " ,
 			"id":"2", 
-			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域" 
+			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL",
+			"image":"./images/article_cover_1.png"
+			 
 		},
 		
 		{ 	"title":"#代表网页中的一个位置" ,
 			"id":"3", 
-			"content":"可以看到，只是请求index.html，根本没有\"#print\"的部分,MYSQL外键(Foreign Key)的使用 在MySQL 3.23.44版本后,InnoDB引擎类型的表支持了外键约束。外键的使用条件:1.两个表必须是InnoDB表,MyISAM表暂时不支持外键" 	
+			"content":"可以看到，只是请求index.html，根本没有\"#print\"的部分,MYSQL外键(Foreign Key)的使用 在MySQL 3.23.44版本后,InnoDB引擎类型的表支持",
+			"image":"./images/article_cover_2.png" 	
 		},
-		{ 	"title":"浏览器实际发出的请求是这样的" ,
-			"id":"4", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
-		},
+		
 		{ 	"title":"浏览器实际发出的请求是这样的" ,
 			"id":"5", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
-		},
-		{ 	"title":"浏览器实际发出的请求是这样的" ,
-			"id":"6", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
-		},
-		{ 	"title":"浏览器实际发出的请求是这样的" ,
-			"id":"7", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
+			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中",
+			"image":"./images/article_cover_1.png" 
 		},
 		{ 	"title":"浏览器实际发出的请求是这样的" ,
 			"id":"8", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
-		},
-		{ 	"title":"浏览器实际发出的请求是这样的" ,
-			"id":"9", 
-			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中" 
+			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中",
+			"image":"./images/article_cover_1.png" 
 		}
 	]
 }

@@ -433,6 +433,28 @@ body
 	padding-bottom: 5px;
 	/*margin-right: 28px;*/
 }
+.list_image_cover
+{
+	width: 110px;
+    /*border: 1px solid #ccc;*/
+    float: left;
+    margin-right: 21px;
+}
+.list_content_with_image
+{
+	float: left;
+    width: 391px;
+}
+.list_article_date
+{
+	font-size: 9pt;
+    padding-left: 10px;
+    color: #ccc;
+}
+.list_article_desc
+{
+	font-size: 10pt;
+}
 .list_block
 {
 	position: relative;	
@@ -442,7 +464,9 @@ body
 .article_block{
 	margin-left:45px;
 	margin-right:45px;
-	margin-bottom:35px;
+	margin-bottom:15px;
+	border-bottom: 1px dashed #ddd;
+	padding-bottom: 15px;
 }
 .article_foot_content
 {
@@ -466,7 +490,7 @@ body
 
 .list_title
 {
-	font-size: 18pt;
+	font-size: 13pt;
 	margin-bottom:10px;
 }
 .content_right{

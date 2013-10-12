@@ -63,7 +63,8 @@
 
 			//var this_page=0;
 			$(window).hashchange(function() {
-				if ((last_page != getPageNum()) || (getArticleID() == -1 && currentArticleID != -1)) {
+				//if ((last_page != getPageNum()) || (getArticleID() == -1 && currentArticleID != -1)) why dont need currentArticleID != -1?
+				if ((last_page != getPageNum()) || (getArticleID() == -1 )) {
 					// alert(getArticleID()+" | " +  currentArticleID); -1 1
 					getArticles();
 				}
@@ -177,9 +178,18 @@
 				var article_str = "";
 
 				for ( i = 0; i < data.length; i++) {
-					article_str += "<div class='article_block'><div class='list_title'><a href='#" + (curPage - 1) + "#" + data[i].id + "'>" + data[i].title + "</a></div><div>" + data[i].content + "</div></div>";
+					if (data[i].image!=undefined && data[i].image!=null)
+					{
+						article_str += "<div class=\"article_block clearfix\" style=\"height:129px;\"><div class=\"list_image_cover\"><img src='"+ data[i].image+"' /></div><div class=\"list_content_with_image\"><div class=\"list_title\"><a href='#"+(curPage - 1) + "#" + data[i].id+"'>" + data[i].title + "</a><span class=\"list_article_date\">2013-2-71</span></div><div class=\"list_article_desc\">"+ data[i].content+"</div></div></div>";
+					}
+					else
+					{
+						article_str += "<div class='article_block clearfix'><div class='list_title'><a href='#" + (curPage - 1) + "#" + data[i].id + "' class=\"list_title\">" + data[i].title + "</a></div><div class=\"list_article_desc\">" + data[i].content + "</div></div>";
+					}
+					// 
+					
 				}
-				$(".list_block").html("<div class='all_list'>" + article_str + "</div>");
+				$(".list_block").html("<div class='all_list clearfix'>" + article_str + "</div>");
 			}
 
 			function getArticles() {
