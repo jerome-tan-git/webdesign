@@ -16,7 +16,17 @@ a img
 	background: url("../images/bt-bg-all.png");
    	height:124px;
 }
+.info_bar
+{
+	padding-left: 33px;
+	font-size: 9pt;
+	color: #ccc;
+}
 
+.info_bar img
+{
+	margin-right: 10px;
+}
 .clearfix:after { content:""; display:block; height:0; clear:both; visibility:hidden;}
 .clearfix       { display:inline-block; }/* Safari, Chrome, Opera, FF  */
 .clearfix       { display:block;} /* IE */
@@ -426,7 +436,7 @@ body
 .list_block
 {
 	position: relative;	
-	height: 100px;
+	/*height: 100px;*/
 }
 
 .article_block{

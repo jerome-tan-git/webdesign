@@ -64,7 +64,7 @@
 			//var this_page=0;
 			$(window).hashchange(function() {
 				if ((last_page != getPageNum()) || (getArticleID() == -1 && currentArticleID != -1)) {
-					//alert(getArticleID()+" | " +  currentArticleID);
+					// alert(getArticleID()+" | " +  currentArticleID); -1 1
 					getArticles();
 				}
 				
@@ -76,7 +76,24 @@
 			});
 
 			function fillArtile(data) {
-				var article_str = "<div class=\"artile_body\"><div class=\"sub_bg_1 content_title\">" + data.title + "</div><div class=\"artile_content\">" + data.cur_page + "</div></div>";
+				var article_str = "<div class=\"artile_body\">"+
+									"<div class=\"sub_bg_1 content_title\">" 
+										+ data.title + 
+										"</div>"+
+											"<div class=\"info_bar\">"+
+												"<span class=\"info_date\">"+
+													"<img src=\"./images/1381561039_calendar.gif\" />"+
+													"<span>2013-12-25</span>"+
+												"</span>&nbsp;&nbsp;&nbsp;&nbsp;"+
+												"<span class=\"info_print\">"+
+													"<img src=\"./images/1381561691_print.png\" />"+
+														"<span>打印</span>"+
+													"</span>"+
+												"</div>"+
+												"<div class=\"artile_content\">" + 
+													data.cur_page + 
+												"</div>"+
+											"</div>";
 				$(".list_block").html(article_str);
 			}
 
@@ -111,6 +128,8 @@
 							$(".list_block").css("left", "0px");
 							$(".artile_content").css("opacity", "0");
 							$(".artile_content").css("top", "10px");
+							$(".info_date").css("opacity", "0");
+							$(".info_print").css("opacity", "0");
 							$(".list_block").animate({
 								opacity : 1
 							}, 'slow', function() {
@@ -124,17 +143,26 @@
 										opacity : 1,
 										top : "0px"
 									}, 'slow', function() {
+										
+										$(".article_back").show();
+										$(".article_back").animate({
+											opacity : 1,
+											left: "149px"
+										},'slow');
+										
+										$(".info_date").delay(500).animate({opacity : 1},'slow',function()
+										{
+											$(".info_print").animate({opacity : 1},'slow', function()
+											{
+												
 
+											});
+										});
 									});
 							});
 							//alert(getCleanURL()+"#"+getPageNum());
 							$("#article_back_url").attr("href", getCleanURL()+"#"+getPageNum());
-							$(".article_back").show();
-							$(".article_back").animate({
-								opacity : 1,
-								left: "149px"
-							},'slow');
-
+							
 						});
 
 					},
@@ -166,14 +194,20 @@
 					dataType : 'json',
 					success : function(data) {
 						$(".loading_articles").hide();
-						// alert(this_page + " | " + last_page + "| current article ID: " + currentArticleID);
+						//alert(this_page + " | " + last_page + "| current article ID: " + currentArticleID);
 
 						if (this_page > last_page) {
+							var moveDis = "-70px";
 
+							if (currentArticleID!= -1)
+							{
+								moveDis = "0px";
+								currentArticleID = -1;
+							}
 							$(".list_block").animate({
 								opacity : 0,
-								left : "-70px"
-							}, 500, function() {
+								left : moveDis
+							}, 500,"easeInExpo", function() {
 								$(".list_block").css("left", "70px");
 								fillData(data.articles, parseInt(data.cur_page));
 								var newHeight = $('.all_list').outerHeight();
@@ -183,17 +217,25 @@
 									$(".list_block").animate({
 										opacity : 1,
 										left : "0px"
-									}, 500, function() {
+									}, 500, 'easeOutQuart',function() {
 										isBusy = 0;
 									});
 								});
 
 							});
 						} else if (this_page < last_page) {
+							var moveDis = "70px";
+
+							if (currentArticleID!= -1)
+							{
+								moveDis = "0px";
+								currentArticleID = -1;
+							}
+
 							$(".list_block").animate({
 								opacity : 0,
-								left : "70px"
-							}, 500, function() {
+								left : moveDis
+							}, 500, "easeInExpo", function() {
 								$(".list_block").css("left", "-70px");
 								fillData(data.articles, parseInt(data.cur_page));
 								var newHeight = $('.all_list').outerHeight();
@@ -203,12 +245,13 @@
 									$(".list_block").animate({
 										opacity : 1,
 										left : "0px"
-									}, 500, function() {
+									}, 500,'easeOutQuart', function() {
 										isBusy = 0;
 									});
 								});
 							});
 						} else if (currentArticleID != -1) {
+							currentArticleID = -1;
 							$(".list_block").animate({
 								opacity : 0
 							}, 'slow');
@@ -225,7 +268,7 @@
 									$(".list_block").animate({
 										opacity : 1,
 										left : "0px"
-									}, 500, function() {
+									}, 500, 'easeOutQuart',function() {
 										isBusy = 0;
 									});
 								});
