@@ -302,10 +302,11 @@
 						//restore pagnation
 						$(".article_back").animate({
 							opacity : 0,
-							left: "169px"
+							left: "59px"
 							},"slow",function()
 							{
 								$(".article_back").hide();
+								$(".article_back").css("left", "169px");
 							});
 						if (data.pageStop == "last") {
 							$(".pageNext").attr("src","./images/next_page_g.png");
