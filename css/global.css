@@ -537,9 +537,16 @@ body
 	position: relative;
 	left: 169px;
 	display:none; 
-	cursor:pointer;
+	/*cursor:pointer;*/
 	top:0px;
 }
+
+.big_font, .middle_font, .small_font
+{
+	cursor: pointer;
+}
+
+
 .shadow_title_line
 {
 	

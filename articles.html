@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title>中文</title>
+		<title>浦东食品质量协会</title>
 		<link rel="stylesheet" type="text/css" href="css/960.css" />
 		<link rel="stylesheet" type="text/css" href="css/global.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery.vegas.min.css">
@@ -75,7 +75,31 @@
 				}
 
 			});
+			function largeFont()
+			{
+				$(".artile_content").animate({fontSize:'13pt'},"slow",function()
+				{
+					var newHeight = $(".artile_body").outerHeight();
+					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
+				});
 
+			}
+			function middleFont()
+			{
+				$(".artile_content").animate({fontSize:'11pt'},"slow",function()
+				{
+					var newHeight = $(".artile_body").outerHeight();
+					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
+				});
+			}
+			function smallFont()
+			{
+				$(".artile_content").animate({fontSize:'9pt'},"slow",function()
+				{
+					var newHeight = $(".artile_body").outerHeight();
+					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
+				});
+			}
 			function fillArtile(data) {
 				var article_str = "<div class=\"artile_body\">"+
 									"<div class=\"sub_bg_1 content_title\">" 
@@ -89,7 +113,12 @@
 												"<span class=\"info_print\">"+
 													"<img src=\"./images/1381561691_print.png\" />"+
 														"<span>打印</span>"+
-													"</span>"+
+													"</span>&nbsp;&nbsp;&nbsp;&nbsp;"+
+													"<span class=\"info_font\" >"+
+													"<img src=\"./images/font.png\">"+
+													"<span class=\"big_font\" onclick=\"largeFont()\">大</span> "+
+													"<span class=\"middle_font\" onclick=\"middleFont()\">中</span> "+
+													"<span class=\"small_font\" onclick=\"smallFont()\">小</span></span>"+
 												"</div>"+
 												"<div class=\"artile_content\">" + 
 													data.cur_page + 
@@ -131,6 +160,7 @@
 							$(".artile_content").css("top", "10px");
 							$(".info_date").css("opacity", "0");
 							$(".info_print").css("opacity", "0");
+							$(".info_font").css("opacity", "0");
 							$(".list_block").animate({
 								opacity : 1
 							}, 'slow', function() {
@@ -155,8 +185,11 @@
 										{
 											$(".info_print").animate({opacity : 1},'slow', function()
 											{
-												
-
+												$(".info_font").animate({opacity : 1},'slow', function()
+												{
+													
+	
+												});
 											});
 										});
 									});
@@ -361,6 +394,9 @@
 					ddmenuitem.fadeOut(500);
 
 				});
+				
+				//font-size
+				
 				if (getArticleID() != -1) {
 					currentArticleID = getArticleID();
 					showArticle(currentArticleID);
