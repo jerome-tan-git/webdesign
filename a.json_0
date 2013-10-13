@@ -8,31 +8,36 @@
 			"title":"page_1" ,
 			"id":"1", 
 			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚",
-			"image":"./images/article_cover.png"
+			"image":"./images/small_1.png",
+			"reImage":"./images/r_1.png"
+			
 		},
 		
 		{ 	"title":"jQuery Ajax 实例 " ,
 			"id":"2", 
 			"content":"就代表网页index.html的print位置。浏览器读取这个URL后，会自动将print位置滚动至可视区域,就代表网页index.html的print位置。浏览器读取这个URL",
-			"image":"./images/article_cover_1.png"
-			 
+			"image":"./images/small_2.png",
+			 "reImage":"./images/r_2.png"
 		},
 		
 		{ 	"title":"#代表网页中的一个位置" ,
 			"id":"3", 
 			"content":"可以看到，只是请求index.html，根本没有\"#print\"的部分,MYSQL外键(Foreign Key)的使用 在MySQL 3.23.44版本后,InnoDB引擎类型的表支持",
-			"image":"./images/article_cover_2.png" 	
+			"image":"./images/small_3.png",
+			"reImage":"./images/r_3.png" 	
 		},
 		
 		{ 	"title":"浏览器实际发出的请求是这样的" ,
 			"id":"5", 
 			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中",
-			"image":"./images/article_cover_1.png" 
+			"image":"./images/small_4.png",
+			"reImage":"./images/r_4.png" 
 		},
 		{ 	"title":"浏览器实际发出的请求是这样的" ,
 			"id":"8", 
 			"content":"在我印象中，这是\\主流网站第\\\"一次将\"#\"大规模}用于直接与用户交互的关键URL中",
-			"image":"./images/article_cover_1.png" 
+			"image":"./images/small_5.png",
+			"reImage":"./images/r_5.png" 
 		}
 	]
 }

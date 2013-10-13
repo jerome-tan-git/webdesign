@@ -180,7 +180,17 @@
 				for ( i = 0; i < data.length; i++) {
 					if (data[i].image!=undefined && data[i].image!=null)
 					{
-						article_str += "<div class=\"article_block clearfix\" style=\"height:129px;\"><div class=\"list_image_cover\"><img src='"+ data[i].image+"' /></div><div class=\"list_content_with_image\"><div class=\"list_title\"><a href='#"+(curPage - 1) + "#" + data[i].id+"'>" + data[i].title + "</a><span class=\"list_article_date\">2013-2-71</span></div><div class=\"list_article_desc\">"+ data[i].content+"</div></div></div>";
+						article_str += "<div class=\"article_block clearfix\" style=\"height:120px;\">"+
+										"<div class=\"list_image_cover\"><div>"+
+										"<img src='"+data[i].image+"'>"+
+										"</div>"+
+										"<div style=\"height: 10px;background-image: url('"+data[i].reImage+"');\">"+
+										"</div>"+
+										"</div>"+
+										"<div class=\"list_content_with_image\">"+
+										"<div class=\"list_title\"><a href='#"+(curPage - 1) + "#" + data[i].id+"'>" +
+										 data[i].title + 
+										 "</a><span class=\"list_article_date\">2013-2-71</span></div><div class=\"list_article_desc\">"+ data[i].content+"</div></div></div>";
 					}
 					else
 					{
