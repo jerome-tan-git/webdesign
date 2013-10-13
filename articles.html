@@ -9,7 +9,6 @@
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script type="text/javascript" src="js/jquery.nailthumb.1.1.min.js"></script>
 		<script type="text/javascript" src="js/jquery.vegas.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slides.min.js"></script>
 		<script type="text/javascript" src="js/jquery-migrate.js"></script>
@@ -18,6 +17,7 @@
 		<script type="text/javascript" src="js/shBrushJScript.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-hashchange.js"></script>
 		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
 		
 		<script type="text/javascript">
 			var last_page = 0;
@@ -82,7 +82,7 @@
 					var newHeight = $(".artile_body").outerHeight();
 					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
 				});
-
+				$.cookie('font', 'large', { expires: 30 }); 
 			}
 			function middleFont()
 			{
@@ -91,6 +91,7 @@
 					var newHeight = $(".artile_body").outerHeight();
 					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
 				});
+				$.cookie('font', 'middle', { expires: 30 }); 
 			}
 			function smallFont()
 			{
@@ -99,6 +100,7 @@
 					var newHeight = $(".artile_body").outerHeight();
 					$(".list_block").animate({height : newHeight + "px"},"slow", "easeInOutQuint");
 				});
+				$.cookie('font', 'small', { expires: 30 }); 
 			}
 			function fillArtile(data) {
 				var article_str = "<div class=\"artile_body\">"+
@@ -161,6 +163,20 @@
 							$(".info_date").css("opacity", "0");
 							$(".info_print").css("opacity", "0");
 							$(".info_font").css("opacity", "0");
+							if ($.cookie('font')!=null)
+							{
+								
+								if ($.cookie('font')=="small")
+								{
+									
+									$(".artile_content").css("font-size","9pt");
+								}
+								else if($.cookie('font')=="large")
+								{
+									
+									$(".artile_content").css("font-size","13pt");
+								}
+							}
 							$(".list_block").animate({
 								opacity : 1
 							}, 'slow', function() {
@@ -395,7 +411,8 @@
 
 				});
 				
-				//font-size
+				//font-size cookie
+				
 				
 				if (getArticleID() != -1) {
 					currentArticleID = getArticleID();
