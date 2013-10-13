@@ -127,7 +127,7 @@ body
 	cursor:pointer;
 	
 }
-.menu_mouse_over
+.menu_mouse_over, .menu_mouse_over_static
 {
 	background: url("../images/mouse_over.png") no-repeat;
 	
@@ -789,7 +789,7 @@ body
 	}
 .search_bg
 {
-	background: url("../images/login-bg_89.jpg") repeat 0% 47%;
+	background: #5CA2A5 url("../images/search_b.png") no-repeat 100% 100%;
 }
 
 .search_img{
