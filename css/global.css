@@ -127,13 +127,96 @@ body
 	cursor:pointer;
 	
 }
+
+.download_outer_div
+{
+	padding-left:10px;
+	padding-right:10px;
+}
+.download_bread_crumb
+{
+	padding-left: 14px;
+}
 .menu_mouse_over, .menu_mouse_over_static
 {
 	background: url("../images/mouse_over.png") no-repeat;
 	
 }
+.download_container
+{
+	border: 1px solid #ccc;
+	overflow:hidden;
+	width: 278px;
+	float: left;
+	height: 260px;
+}
+.info_click{
+	cursor:pointer;
+}
+.real_content{
+	padding-top:20px;
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	color:#333333;
+	font-size:11pt;
+	background: url("../images/info_back_b.png") repeat-x 0% 100%;
+}
+.word_bg
+{
+	background: #2b5796;
+}
+.download_menu{
+	//height:30px;
+}
+.download_title_detail{
+	margin-left:20px;
+	margin-right:10px;
+	margin-top: 20px;
+	color:#fff;
+	font-size:12pt;
+	height: 42px;
+}
+.download_bottom{
+	background-color:#387038;
+	height: 168px;
+	background: #2b5796 url("../images/word_bg.png") no-repeat 78px -38px;
+}
+.download_button
+{
+	top: 117px;
+	left: 22px;
+	position: relative;
+}
+.download_desc{
+	background: #2b5796 url("../images/info_back.png") no-repeat 0px 0px;
+	height:0px;
+	overflow: hidden
+}
 
-
+.download_image
+{
+	float: left; 
+	width:35px
+}
+.download_tip
+{
+	color:#eee;
+	font-size:9pt;
+	float: right;
+	margin-right: 40px;
+	margin-top: 22px;
+}
+.download_container_right
+{
+	margin-left: 10px;
+	margin-right: 20px;
+}
+.download_container_left
+{
+	margin-left: 20px;
+	margin-right: 10px;
+}
 .div_icon
 {
 	padding-left:10px;

@@ -27,11 +27,31 @@
 					ddmenuitem.fadeOut(500);
 
 				});
+				
+				//download_info
+				$(".info_click").bind('click',function(){
+					//real_content
+					var height=$(this).parent().parent().parent().find(".real_content").outerHeight();
+					
+					if($(this).parent().parent().parent().find(".download_desc").outerHeight()==0)
+					{
+						$(this).parent().parent().parent().find(".download_desc").animate({height:height+"px"},'slow');
+						$(this).attr("src","./images/info_up.png");
+					}
+					else
+					{
+						$(this).parent().parent().parent().find(".download_desc").animate({height:0+"px"},'slow');
+						$(this).attr("src","./images/download_info.png");
+					}
+					
+				});
+				
+				
 				//menu_
 				$('.sub_item').hover(function() {
 					$(this).parent().animate({
 						backgroundColor : "#ffffff"
-					}, 'low');
+					}, 'slow');
 					// $(this).parent().css('background','#F');
 					$(this).animate({
 						left : '4px'
@@ -69,23 +89,7 @@
 				});
 
 				//content_list
-				$('.content_item').hover(function() {
-					$(this).animate({
-						left : '4px',
-						color : '#000000'
-					});
-					$(this).parent().animate({
-						backgroundColor : "#fefeed"
-					}, 'low');
-				}, function() {
-					$(this).animate({
-						left : '0px',
-						color : '#666666'
-					});
-					$(this).parent().animate({
-						backgroundColor : "transparent"
-					}, 'low');
-				});
+
 
 			});
 
@@ -240,12 +244,62 @@
 								<span class="blue_font">分类分类</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span class="blue_font">分类分类</span>&nbsp;&nbsp;<span>/</span>&nbsp;&nbsp;<span>分类分类</span>
 							</div>
 						</div>
-						<!-- <div class="pull_right article_icon">
-							<img src="./images/like.png" />&nbsp;<img src="./images/print.png" />
-						</div> -->
+						
 
 					</div>
+					<div class="download_container download_container_left word_bg">
+						<div class="download_title_detail">分类分类分类分类分类分类分类分类分类分类分类分类</div>
+						<div class="download_menu clearfix">
+							<div class="clearfix">
+								<div class="pull_right">
+									<img class="info_click" src="./images/download_info.png" />
+								</div>
+							</div>
+							<div class="clearfix download_desc" >
+								<div class="real_content">特别说明：本站所有资源仅供学习与参考，请勿用于商业用途,如有侵犯您的版权，请及时发邮件联系我们</div>
+							</div>
+						</div>
+						<div class="download_bottom clearfix">
+							<div class="download_button clearfix">
+								<div class="download_image clearfix">
+									<img src="./images/download.png" />
+								</div>
+								<div class="clearfix">
+									<div class="download_tip">
+										<img src="./images/size.png" /> 1.5M&nbsp;&nbsp;&nbsp;<img src="./images/date.png" /> 20121-07-12
+									</div>
+								</div>
+							</div>
 
+						</div>
+					</div>
+					<div class="download_container download_container_right word_bg">
+						<div class="download_title_detail">分类分类分类分类分类分类分类分类分类分类分类分类</div>
+						<div class="download_menu clearfix">
+							<div class="clearfix">
+								<div class="pull_right">
+									<img class="info_click" src="./images/download_info.png" />
+								</div>
+							</div>
+							<div class="clearfix download_desc" >
+								<div class="real_content">特别说明：本站所有资源仅供学习与参考，请勿用于商业用途,如有侵犯您的版权，请及时发邮件联系我们</div>
+							</div>
+						</div>
+						<div class="download_bottom clearfix">
+							<div class="download_button clearfix">
+								<div class="download_image clearfix">
+									<img src="./images/download.png" />
+								</div>
+								<div class="clearfix">
+									<div class="download_tip">
+										<img src="./images/size.png" /> 1.5M&nbsp;&nbsp;&nbsp;<img src="./images/date.png" /> 20121-07-12
+									</div>
+								</div>
+							</div>
+
+						</div>
+						
+					</div>
 				</div>
 				<div class="bt-shadow"></div>
 				<!-- block over -->
