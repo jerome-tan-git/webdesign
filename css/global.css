@@ -546,6 +546,10 @@ body
 	cursor: pointer;
 }
 
+.black_font{
+	color:#333;
+}
+
 
 .shadow_title_line
 {
