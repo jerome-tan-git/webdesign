@@ -177,14 +177,67 @@ body
 	font-size:12pt;
 	height: 42px;
 }
-.download_bottom{
-	background-color:#387038;
+.download_bottom_word{
+
 	height: 168px;
 	background: #2b5796 url("../images/word_bg.png") no-repeat 78px -38px;
 }
+
+.download_bottom_excel{
+
+	height: 168px;
+	background: #1e7145 url("../images/excel_back.png")  no-repeat 148px 33px;
+}
+.excel_bg
+{
+	background-color: #1e7145;
+}
+
+
+.download_bottom_pdf{
+
+	height: 168px;
+	background: #97151E  url("../images/pdf_back.png")  no-repeat 148px 33px;
+}
+.pdf_bg
+{
+	background-color: #97151E ;
+}
+
+.download_bottom_ppt{
+
+	height: 168px;
+	background: #d04525  url("../images/ppt_back.png")  no-repeat 148px 33px;
+}
+.ppt_bg
+{
+	background-color: #d04525 ;
+}
+
+.download_bottom_zip{
+
+	height: 168px;
+	background: #ff9408  url("../images/zip_back.png")  no-repeat 148px 33px;
+}
+.zip_bg
+{
+	background-color: #ff9408 ;
+}
+
+
+.download_bottom_txt{
+
+	height: 168px;
+	background: #008d44  url("../images/txt_back.png")  no-repeat 148px 33px;
+}
+.txt_bg
+{
+	background-color: #008d44 ;
+}
+
 .download_button
 {
-	top: 117px;
+	top: 124px;
 	left: 22px;
 	position: relative;
 }
@@ -198,6 +251,11 @@ body
 {
 	float: left; 
 	width:35px
+	
+}
+.download_image img
+{
+	cursor:pointer;
 }
 .download_tip
 {
@@ -211,6 +269,7 @@ body
 {
 	margin-left: 10px;
 	margin-right: 20px;
+	margin-bottom:10px;
 }
 .download_container_left
 {
