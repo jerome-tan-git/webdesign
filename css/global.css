@@ -145,10 +145,10 @@ body
 .download_container
 {
 	border: 1px solid #ccc;
-	overflow:hidden;
 	width: 278px;
 	float: left;
 	height: 260px;
+	overflow:hidden;
 }
 .info_click{
 	cursor:pointer;
@@ -158,7 +158,7 @@ body
 	padding-left:20px;
 	padding-right:20px;
 	padding-bottom:20px;
-	color:#333333;
+	color:#fff;
 	font-size:11pt;
 	background: url("../images/info_back_b.png") repeat-x 0% 100%;
 }
@@ -167,7 +167,7 @@ body
 	background: #2b5796;
 }
 .download_menu{
-	//height:30px;
+	/*height:30px; */
 }
 .download_title_detail{
 	margin-left:20px;
@@ -237,14 +237,20 @@ body
 
 .download_button
 {
+	padding-top:124px;
+	padding-left:22px;
+	/*
 	top: 124px;
 	left: 22px;
-	position: relative;
+	position:relative;
+*/
 }
 .download_desc{
 	background: #2b5796 url("../images/info_back.png") no-repeat 0px 0px;
+	overflow: hidden;
+	color: #fff;
 	height:0px;
-	overflow: hidden
+	
 }
 
 .download_image
