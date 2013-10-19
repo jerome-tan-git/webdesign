@@ -3,63 +3,92 @@ transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-		<title>jQuery淡入淡出、展开收缩菜单</title>
+		<title>jQa</title>
 		<style type="text/css">
-			ul li {
-				list-style: none;
-			}
-			ul li.menu {
-				position: relative;
-				width: 120px;
-			}
-			ul li.menu ul {
-				display: none;
-				text-align: center;
-				background: #fff;
-				border: 1px solid #ddd;
-				width: 100px;
-				padding: 5px;
-			}
-			ul li.menu ul li {
-				padding: 5px 0;
-				border-bottom: 1px dotted #ddd;
-			}
+			.warp {
+				filter:alpha(opacity=20);
+				}
+				
+		.img24 {
+			background:none;
+			filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='./images/test.png"');
+			width:100px;
+			height:100px;
+		}
 		</style>
-		<script src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery-migrate.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$(".menu").hover(function() {
-					$(".content").fadeIn(800);
-					// $(".content").slideDown(800);
-				}, function() {
-					$(".content").fadeOut(1000);
-					// $(".content").slideUp(1000);
-				});
+		
+		function enterSite()
+		{
+			var dis = $("#cover").outerHeight(true);
+			$("#cover").animate(
+				{
+					top: "-1000px"
+				},1000,'easeInQuart', function()
+				{
+					$("#cover").remove();
+				}
+			);
+		}
+		$(document).ready(function() {
+			//$("#myFlash").style.width=window.screen.width+"px";
+			// $("#tt1").css("height",$(document.body).outerHeight(true)+"px");
+			// $("#tt2").css("height",$(document.body).outerHeight(true)+"px");
+			$("#cover").css("width",$(document.body).outerWidth(true)+"px");
+			$("#cover").css("height",$(document.body).outerHeight(true)+"px");
+			$("#tt1").css("width",$(document.body).outerWidth(true)+"px");
+			$("#tt2").css("width",$(document.body).outerWidth(true)+"px");
+			
+			//$("#a").animate({
+//				left:"1000px",
+				//opacity : 0
+			//},2000);
+			// $("#b").css("opacity","0");
+			// $("#b").show();
+			// testF("b");
+			// testF("c");
+			// testF("d");
+			// testF("e");
+			// testF("f");
+			// var y = Math.floor(Math.random()*100+1);
+			// $("#b").css('left',x+"px");
+			// $("#b").css('top',y+"px");
+			// $("#b").animate({
+							// opacity : 0,
+						// }, 'fast');
 			});
+			
 		</script>
 	</head>
 	<body>
-		<ul>
-			<li class="menu">
-				<a>弹出菜单</a>
-				<ul class="content">
-					<li>
-						<a href="#">菜单内容1</a>
-					</li>
-					<li>
-						<a href="#">菜单内容2</a>
-					</li>
-					<li>
-						<a href="#">菜单内容3</a>
-					</li>
-					<li>
-						<a href="#">菜单内容4</a>
-					</li>
-					<li>
-						<a href="#">菜单内容5</a>
-					</li>
-				</ul>
-			</li>
-		</ul>
+		<div id="cover" style="position: absolute; left: 0px; top: 0px; z-index: 100; background-color: #ffffff">
+		<object id="tt1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1000" height="800">
+		  <param name="movie" value="./images/my.swf">
+		  <param name="quality" value="high">
+		  <embed id="tt2" src="./images/my.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1000" height="800"></embed>
+		</object>
+		</div>
+		<div style="width: 1000px; width: 500px; background-color: #cc0000">&nbsp;</div>
+		<!-- <div id="a" style="width:1000px;height:50px;background-color: #cc0000;position: absolute;left:-500;top:50px;border:2px solid #000;"></div> -->
+		<!-- <div id="b" style="position:absolute; background: url('./images/test.png') no-repeat; width:150px; height:150px">
+			
+		</div>
+		<div id="c" style="position:absolute; background: url('./images/test1.png') no-repeat; width:150px; height:150px">
+			
+		</div>
+		<div id="d" style="position:absolute; background: url('./images/test2.png') no-repeat; width:150px; height:150px">
+			
+		</div>
+		<div id="e" style="position:absolute; background: url('./images/test3.png') no-repeat; width:150px; height:150px">
+			
+		</div>
+		<div id="f" style="position:absolute; background: url('./images/test4.png') no-repeat; width:150px; height:150px">
+			
+		</div> -->
 	</body>
 </html>
