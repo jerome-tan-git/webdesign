@@ -5,6 +5,14 @@ transitional.dtd">
 		<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 		<title>jQa</title>
 		<style type="text/css">
+		html, body, p {
+		    margin: 0;
+		    padding: 0;
+		}
+		
+		body {
+		    overflow: hidden;
+		}
 			.warp {
 				filter:alpha(opacity=20);
 				}
@@ -28,10 +36,12 @@ transitional.dtd">
 			var dis = $("#cover").outerHeight(true);
 			$("#cover").animate(
 				{
-					top: "-1000px"
-				},1000,'easeInQuart', function()
+					top: "-2000px"
+				},2000,'easeInQuart', function()
 				{
 					$("#cover").remove();
+					$(document.body).css("overflow","auto");
+					$("html").css("overflow","auto");
 				}
 			);
 		}
@@ -39,6 +49,7 @@ transitional.dtd">
 			//$("#myFlash").style.width=window.screen.width+"px";
 			// $("#tt1").css("height",$(document.body).outerHeight(true)+"px");
 			// $("#tt2").css("height",$(document.body).outerHeight(true)+"px");
+			$("html").css("overflow","hidden");
 			$("#cover").css("width",$(document.body).outerWidth(true)+"px");
 			$("#cover").css("height",$(document.body).outerHeight(true)+"px");
 			$("#tt1").css("width",$(document.body).outerWidth(true)+"px");
@@ -65,7 +76,7 @@ transitional.dtd">
 			
 		</script>
 	</head>
-	<body>
+	<body style="overflow: hidden">
 		<div id="cover" style="position: absolute; left: 0px; top: 0px; z-index: 100; background-color: #ffffff">
 		<object id="tt1" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="1000" height="800">
 		  <param name="movie" value="./images/my.swf">
@@ -73,7 +84,9 @@ transitional.dtd">
 		  <embed id="tt2" src="./images/my.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1000" height="800"></embed>
 		</object>
 		</div>
-		<div style="width: 1000px; width: 500px; background-color: #cc0000">&nbsp;</div>
+		<div style="width: 1000px; height: 500px; background-color: #cc0000">aaa</div>
+		<div style="width: 1000px; height: 500px; background-color: #00cc00">aaa</div>
+		<div style="width: 1000px; height: 500px; background-color: #0000cc">aaa</div>
 		<!-- <div id="a" style="width:1000px;height:50px;background-color: #cc0000;position: absolute;left:-500;top:50px;border:2px solid #000;"></div> -->
 		<!-- <div id="b" style="position:absolute; background: url('./images/test.png') no-repeat; width:150px; height:150px">
 			
